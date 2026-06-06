@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNR界隈ニュース</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f5f2eb;
+    --paper: #faf8f3;
+    --ink: #1a1611;
+    --ink2: #4a4540;
+    --ink3: #8a857e;
+    --red: #c0392b;
+    --red-bg: #fdf0ee;
+    --red-border: #e8c5c0;
+    --blue-bg: #eef3f8;
+    --blue: #2563a8;
+    --gold: #b8860b;
+    --border: #d4cfc6;
+    --border-light: #e8e4dc;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* MASTHEAD */
+  .masthead {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    padding: 2rem 1rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--red), #e74c3c, var(--red));
+  }
+  .masthead-date {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #aaa;
+    font-family: 'Noto Serif JP', serif;
+    margin-bottom: 8px;
+  }
+  .masthead-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .masthead-subtitle {
+    font-size: 12px;
+    color: #bbb;
+    letter-spacing: 2px;
+  }
+  .masthead-rule {
+    border: none;
+    border-top: 1px solid #444;
+    margin: 1rem auto 0;
+    max-width: 400px;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--paper);
+    border-bottom: 2px solid var(--ink);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  .nav-btn {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13px;
+    color: var(--ink2);
+    padding: 12px 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    border-right: 1px solid var(--border-light);
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+  .nav-btn:hover { background: var(--bg); }
+  .nav-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+    font-weight: 600;
+  }
+
+  /* PAGES */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  /* BREAKING BANNER */
+  .breaking {
+    background: var(--red);
+    color: #fff;
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+    border-radius: 2px;
+    animation: pulse-border 2s ease-in-out infinite;
+  }
+  @keyframes pulse-border {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(192,57,43,0.3); }
+    50% { box-shadow: 0 0 0 6px rgba(192,57,43,0); }
+  }
+  .breaking-label {
+    background: #fff;
+    color: var(--red);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 2px;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    font-family: 'Noto Serif JP', serif;
+    flex-shrink: 0;
+  }
+  .breaking-text {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* GRID */
+  .top-grid {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 2rem;
+    align-items: start;
+  }
+  @media (max-width: 640px) {
+    .top-grid { grid-template-columns: 1fr; }
+    .masthead-title { font-size: 26px; }
+  }
+
+  /* ARTICLE CARDS */
+  .article-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--ink);
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    margin-bottom: 1rem;
+  }
+  .article-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  }
+  .card-tags {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+    font-family: 'Noto Serif JP', serif;
+  }
+  .tag-red { background: var(--red); color: #fff; }
+  .tag-blue { background: var(--blue-bg); color: var(--blue); border: 1px solid #c5d8ee; }
+  .tag-gold { background: #fdf8ee; color: var(--gold); border: 1px solid #e8d8a0; }
+
+  .card-date {
+    font-size: 11px;
+    color: var(--ink3);
+    margin-bottom: 8px;
+    font-family: 'Noto Serif JP', serif;
+  }
+  .card-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.45;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .card-summary {
+    font-size: 13px;
+    color: var(--ink2);
+    line-height: 1.7;
+  }
+  .card-read {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--red);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* SIDEBAR */
+  .sidebar-block {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    padding: 1rem 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .sidebar-heading {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .trending-item {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border-light);
+    cursor: pointer;
+    transition: color 0.12s;
+    font-size: 13px;
+    color: var(--ink2);
+  }
+  .trending-item:last-child { border-bottom: none; }
+  .trending-item:hover { color: var(--red); }
+  .trending-num {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink3);
+    min-width: 16px;
+    flex-shrink: 0;
+  }
+  .sidebar-note {
+    font-size: 12px;
+    color: var(--ink3);
+    line-height: 1.7;
+  }
+
+  /* ARTICLE PAGE */
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--ink2);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    transition: color 0.12s;
+  }
+  .back-btn:hover { color: var(--red); }
+  .back-btn svg { width: 16px; height: 16px; }
+
+  .article-wrap {
+    max-width: 680px;
+  }
+
+  .article-kicker {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .article-headline {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .article-byline {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--ink3);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 0;
+    margin-bottom: 1.5rem;
+    font-family: 'Noto Serif JP', serif;
+  }
+
+  .article-body {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--ink);
+  }
+  .article-body p { margin-bottom: 1.1rem; }
+
+  .article-lead {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.75;
+    border-left: 4px solid var(--red);
+    padding: 8px 0 8px 16px;
+    margin-bottom: 1.25rem;
+    color: var(--ink);
+    background: var(--red-bg);
+  }
+
+  .info-box {
+    background: var(--blue-bg);
+    border-left: 4px solid var(--blue);
+    padding: 12px 16px;
+    margin: 1.5rem 0;
+    font-size: 14px;
+    color: var(--ink2);
+    line-height: 1.75;
+  }
+  .info-box strong { color: var(--blue); font-weight: 700; }
+
+  .update-box {
+    background: #fffbee;
+    border: 1px solid #e8d8a0;
+    border-left: 4px solid var(--gold);
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #7a6820;
+    line-height: 1.75;
+    margin-top: 1.5rem;
+  }
+  .update-box strong { color: var(--gold); font-weight: 700; }
+
+  /* ABOUT PAGE */
+  .about-wrap { max-width: 600px; }
+  .about-wrap h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .about-wrap p {
+    font-size: 14px;
+    color: var(--ink2);
+    line-height: 1.85;
+    margin-bottom: 1rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: #888;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 12px;
+    margin-top: 3rem;
+    letter-spacing: 0.5px;
+  }
+  footer span { color: #bbb; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-date">2026年6月6日（土） ／ 創刊号</div>
+  <div class="masthead-title">SNR界隈ニュース</div>
+  <div class="masthead-subtitle">SNR界隈の最新情報をいち早くお届け</div>
+  <hr class="masthead-rule">
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="showPage('top', this)">トップ</button>
+    <button class="nav-btn" onclick="showPage('article1', this)">事件・速報</button>
+    <button class="nav-btn" onclick="showPage('about', this)">このサイトについて</button>
+  </div>
+</nav>
+
+<!-- TOP PAGE -->
+<div id="page-top" class="page active">
+  <div class="container">
+    <div class="breaking">
+      <span class="breaking-label">速報</span>
+      <span class="breaking-text">masu氏、黒猫シア氏をリアルでエンカしようとしている疑惑が浮上 — 続報を随時更新中</span>
+    </div>
+    <div class="top-grid">
+      <div>
+        <div class="article-card" onclick="showPage('article1', document.querySelectorAll('.nav-btn')[1])">
+          <div class="card-tags">
+            <span class="tag tag-red">悲報</span>
+            <span class="tag tag-gold">続報あり</span>
+          </div>
+          <div class="card-date">2026年6月6日（土）</div>
+          <div class="card-title">masu氏、ネッ友である黒猫シア氏をリアルでストーカーしてしまう</div>
+          <div class="card-summary">SNR界隈に衝撃。masu氏が黒猫シア氏をリアルでエンカしようとしているとの情報が入った。さらにAZUKI氏も「追います」との発言を残していることが明らかに。</div>
+          <div class="card-read">▶ 続きを読む</div>
+        </div>
+
+        <div class="article-card">
+          <div class="card-tags">
+            <span class="tag tag-blue">お知らせ</span>
+          </div>
+          <div class="card-date">2026年6月6日（土）</div>
+          <div class="card-title">SNR界隈ニュース、本日より創刊。</div>
+          <div class="card-summary">SNR界隈の動向をリアルタイムでお届けするメディア「SNR界隈ニュース」が本日より運営を開始しました。情報提供はDMにて受け付けております。今後ともよろしくお願いします。</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sidebar-block">
+          <div class="sidebar-heading">注目ワード</div>
+          <div class="trending-item" onclick="showPage('article1', document.querySelectorAll('.nav-btn')[1])">
+            <span class="trending-num">1</span>
+            <span>masu氏のストーカー疑惑</span>
+          </div>
+          <div class="trending-item">
+            <span class="trending-num">2</span><span>黒猫シア</span>
+          </div>
+          <div class="trending-item">
+            <span class="trending-num">3</span><span>AZUKI氏も追う発言</span>
+          </div>
+          <div class="trending-item">
+            <span class="trending-num">4</span><span>SNRリアルエンカ問題</span>
+          </div>
+          <div class="trending-item">
+            <span class="trending-num">5</span><span>ネッ友とリアル交流</span>
+          </div>
+        </div>
+
+        <div class="sidebar-block">
+          <div class="sidebar-heading">編集メモ</div>
+          <div class="sidebar-note">情報が入り次第、随時更新します。続報をお待ちください。誤報・追加情報はDMまでご連絡ください。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE PAGE -->
+<div id="page-article1" class="page">
+  <div class="container">
+    <button class="back-btn" onclick="showPage('top', document.querySelectorAll('.nav-btn')[0])">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      トップへ戻る
+    </button>
+
+    <div class="article-wrap">
+      <div class="article-kicker">
+        <span class="tag tag-red">悲報</span>
+        <span class="tag tag-gold">続報あり</span>
+      </div>
+      <h1 class="article-headline">悲報　masu氏、ネッ友である黒猫シア をリアルでストーカーしてしまう。</h1>
+      <div class="article-byline">
+        <span>2026年6月6日（土）</span>
+        <span>SNR界隈ニュース編集部</span>
+      </div>
+
+      <div class="article-body">
+        <p class="article-lead">masuが黒猫シアを、リアルでエンカしようとしているのが現情報です。</p>
+
+        <p>SNR界隈に衝撃が走った。ネット上の交流を中心に活動してきたmasu氏が、同じくSNR界隈で知られる黒猫シア氏を、リアルで「エンカ（エンカウント）」しようとしているとの情報が、複数のルートから編集部に入った。</p>
+
+        <p>黒猫シア氏はmasu氏のいわゆる「ネッ友」であり、これまで両者の交流はオンライン上に留まっていたとされている。しかし今回、masu氏がリアルでの接触を試みているとの疑惑が浮上し、界隈内で大きな波紋を呼んでいる。</p>
+
+        <div class="info-box">
+          <strong>【関係者情報】</strong><br>
+          尚、AZUKI氏も「追います」という発言を残しているとの情報も入っており、複数名が黒猫シア氏のもとへ向かっている可能性も否定できない。
+        </div>
+
+        <p>本件については現在も情報収集中であり、編集部では引き続き各方面への取材を続けている。黒猫シア氏の安全が確認されるまで、SNR界隈ニュースとして動向を注視していく方針だ。</p>
+
+        <p>SNR界隈では近年、ネット上の人間関係がリアルに波及するケースが散見されており、今回の件もその一例として注目が集まっている。識者からは「オンラインとオフラインの境界線を巡る問題」として捉える声も上がっている。</p>
+
+        <div class="update-box">
+          <strong>【編集部より】</strong><br>
+          情報が入り次第また報道します。続報をお待ちください。
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT PAGE -->
+<div id="page-about" class="page">
+  <div class="container">
+    <div class="about-wrap">
+      <h2>このサイトについて</h2>
+      <p><strong>SNR界隈ニュース</strong>は、SNR界隈で起きる出来事・トレンド・事件を速報形式でお届けする非公式ファンメディアです。</p>
+      <p>情報の正確性には最大限努めていますが、すべての情報は報告時点のものであり、状況が変化する場合があります。</p>
+      <div class="info-box">
+        <strong>情報提供・訂正依頼</strong><br>
+        誤情報・追加情報がある場合はAZUKI氏のDMまでご連絡ください。確認次第、記事に反映します。
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>SNR界隈ニュース</span> &nbsp;|&nbsp; 2026年 創刊 &nbsp;|&nbsp; 非公式ファンメディア
+</footer>
+
+<script>
+function showPage(id, navEl) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  if (navEl) navEl.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
