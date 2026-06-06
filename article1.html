@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【悲報】masu氏、ネッ友である黒猫シア氏をリアルでストーカーしてしまう | SNR界隈ニュース</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#f2f2f2;
+  --paper:#fff;
+  --ink:#111;
+  --ink2:#333;
+  --ink3:#666;
+  --ink4:#999;
+  --red:#d00000;
+  --red2:#ff2222;
+  --border:#ddd;
+  --border2:#eee;
+  --link:#0a4fa8;
+  --accent:#e8f0fb;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',sans-serif;font-size:14px;line-height:1.7;}
+a{color:var(--link);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* TOP BAR */
+.topbar{background:#111;color:#ccc;font-size:11px;padding:4px 0;}
+.topbar-inner{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.topbar-left{display:flex;align-items:center;gap:12px;}
+.topbar-weather{color:#aaa;}
+
+/* MASTHEAD */
+.masthead{background:#fff;border-bottom:3px solid #111;padding:10px 0 0;}
+.masthead-inner{max-width:1100px;margin:0 auto;padding:0 16px;}
+.masthead-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:8px;}
+.site-logo{font-family:'Noto Serif JP',serif;font-size:30px;font-weight:700;color:#111;letter-spacing:-0.5px;line-height:1;}
+.site-logo span{color:var(--red);font-size:11px;display:block;font-family:'Noto Sans JP',sans-serif;font-weight:400;letter-spacing:1px;margin-top:2px;}
+.masthead-ad-area{background:#f5f5f5;border:1px solid #ddd;width:300px;height:50px;display:flex;align-items:center;justify-content:center;font-size:11px;color:#aaa;}
+
+/* GNAV */
+.gnav{background:#111;border-bottom:2px solid var(--red);}
+.gnav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;}
+.gnav a{color:#ddd;font-size:13px;padding:9px 14px;display:block;border-right:1px solid #333;white-space:nowrap;transition:background 0.1s,color 0.1s;}
+.gnav a:hover,.gnav a.active{background:var(--red);color:#fff;text-decoration:none;}
+
+/* BREAKING */
+.breaking-bar{background:var(--red);color:#fff;padding:7px 0;overflow:hidden;}
+.breaking-inner{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:10px;}
+.breaking-label{background:#fff;color:var(--red);font-size:11px;font-weight:700;padding:2px 8px;white-space:nowrap;border-radius:2px;flex-shrink:0;font-family:'Noto Serif JP',serif;letter-spacing:1px;}
+.breaking-text{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* BREADCRUMB */
+.breadcrumb{background:#fff;border-bottom:1px solid var(--border);padding:6px 0;}
+.breadcrumb-inner{max-width:1100px;margin:0 auto;padding:0 16px;font-size:12px;color:var(--ink3);display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.breadcrumb-inner a{color:var(--link);}
+.breadcrumb-sep{color:#bbb;}
+
+/* MAIN LAYOUT */
+.main-wrap{max-width:1100px;margin:0 auto;padding:20px 16px;display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start;}
+@media(max-width:768px){.main-wrap{grid-template-columns:1fr;}.masthead-ad-area{display:none;}}
+
+/* ARTICLE */
+.article-main{}
+.article-header{margin-bottom:16px;}
+.article-tags{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;}
+.atag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;letter-spacing:0.5px;}
+.atag-red{background:var(--red);color:#fff;}
+.atag-gold{background:#fff3cd;color:#856404;border:1px solid #ffc107;}
+.atag-gray{background:#e9ecef;color:#495057;border:1px solid #ccc;}
+
+.article-title{font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;line-height:1.45;color:#111;margin-bottom:10px;}
+.article-meta{display:flex;align-items:center;gap:16px;font-size:12px;color:var(--ink3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:7px 0;margin-bottom:14px;flex-wrap:wrap;}
+.article-meta-item{display:flex;align-items:center;gap:4px;}
+.update-badge{background:#fff3cd;border:1px solid #ffc107;color:#856404;font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;}
+
+/* ARTICLE BODY */
+.article-body{font-size:15px;line-height:1.9;color:#222;}
+.article-body p{margin-bottom:1.1rem;}
+.article-lead{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:600;line-height:1.8;border-left:4px solid var(--red);padding:10px 14px;margin-bottom:1.25rem;background:#fff5f5;color:#111;}
+.article-body h2{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;border-left:4px solid #111;padding:4px 0 4px 12px;margin:1.5rem 0 0.75rem;color:#111;}
+.info-box{background:#e8f0fb;border-left:4px solid #0a4fa8;padding:12px 16px;margin:1.25rem 0;font-size:14px;color:#0a3d7a;line-height:1.8;}
+.info-box strong{color:#0a4fa8;font-weight:700;display:block;margin-bottom:4px;}
+.warning-box{background:#fff8e1;border:1px solid #ffc107;border-left:4px solid #f0a500;padding:12px 16px;margin:1.25rem 0;font-size:14px;color:#5c4000;line-height:1.8;}
+.warning-box strong{color:#f0a500;font-weight:700;display:block;margin-bottom:4px;}
+.update-box{background:#e8f5e9;border:1px solid #81c784;border-left:4px solid #388e3c;padding:12px 16px;font-size:13px;color:#1b5e20;line-height:1.8;margin-top:1.5rem;}
+.update-box strong{color:#2e7d32;font-weight:700;}
+
+/* SNS SHARE */
+.share-area{display:flex;align-items:center;gap:8px;padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:1.5rem 0;flex-wrap:wrap;}
+.share-label{font-size:12px;color:var(--ink3);font-weight:500;}
+.share-btn{font-size:12px;font-weight:700;padding:5px 14px;border-radius:3px;cursor:pointer;border:none;}
+.share-x{background:#000;color:#fff;}
+.share-line{background:#06c755;color:#fff;}
+.share-copy{background:#e9ecef;color:#333;border:1px solid #ccc;}
+
+/* RELATED */
+.related-articles{margin-top:1.5rem;}
+.related-title{font-size:14px;font-weight:700;border-bottom:2px solid #111;padding-bottom:6px;margin-bottom:12px;}
+.related-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--border2);cursor:pointer;}
+.related-item:last-child{border-bottom:none;}
+.related-img{width:80px;height:54px;background:#e9ecef;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:#999;}
+.related-item-title{font-size:13px;font-weight:500;line-height:1.5;color:#111;}
+.related-item-title:hover{color:var(--link);}
+.related-item-date{font-size:11px;color:var(--ink4);margin-top:4px;}
+
+/* SIDEBAR */
+.sidebar{}
+.side-block{background:#fff;border:1px solid var(--border);margin-bottom:16px;}
+.side-block-head{background:#111;color:#fff;font-size:13px;font-weight:700;padding:8px 12px;letter-spacing:0.5px;}
+.side-block-head.red{background:var(--red);}
+.side-block-body{padding:12px;}
+.ranking-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--border2);cursor:pointer;}
+.ranking-item:last-child{border-bottom:none;}
+.ranking-num{font-size:18px;font-weight:700;color:var(--red);min-width:24px;font-family:'Noto Serif JP',serif;line-height:1;}
+.ranking-num.n2{color:#888;}
+.ranking-num.n3{color:#c97c2e;}
+.ranking-item-title{font-size:13px;line-height:1.5;color:#111;}
+.ranking-item-title:hover{color:var(--link);}
+
+.side-tag-cloud{display:flex;flex-wrap:wrap;gap:6px;padding:12px;}
+.side-tag{font-size:12px;padding:3px 10px;border:1px solid var(--border);border-radius:2px;color:var(--ink2);cursor:pointer;}
+.side-tag:hover{background:#111;color:#fff;border-color:#111;}
+
+.side-ad{background:#f5f5f5;border:1px solid #ddd;height:250px;display:flex;align-items:center;justify-content:center;font-size:11px;color:#aaa;margin-bottom:16px;}
+
+/* FOOTER */
+footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
+.footer-inner{max-width:1100px;margin:0 auto;padding:0 16px;}
+.footer-logo{font-family:'Noto Serif JP',serif;font-size:18px;color:#fff;margin-bottom:8px;}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;}
+.footer-links a{font-size:12px;color:#888;}
+.footer-links a:hover{color:#fff;}
+.footer-copy{font-size:11px;color:#555;border-top:1px solid #333;padding-top:12px;margin-top:12px;}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span>2026年6月6日（土）</span>
+      <span class="topbar-weather">福岡 ☀ 24°C</span>
+    </div>
+    <div>
+      <a href="index.html" style="color:#aaa;font-size:11px;">トップ</a>
+      &nbsp;|&nbsp;
+      <span style="color:#555;font-size:11px;">非公式ファンメディア</span>
+    </div>
+  </div>
+</div>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-top">
+      <div>
+        <a href="index.html" style="text-decoration:none;">
+          <div class="site-logo">SNR界隈ニュース<span>SNR KAIWA NEWS — 界隈の今をいち早く</span></div>
+        </a>
+      </div>
+      <div class="masthead-ad-area">広告</div>
+    </div>
+  </div>
+  <div class="gnav">
+    <div class="gnav-inner">
+      <a href="index.html">トップ</a>
+      <a href="#" class="active">事件・速報</a>
+      <a href="#">人間関係</a>
+      <a href="#">考察</a>
+      <a href="#">お知らせ</a>
+    </div>
+  </div>
+</div>
+
+<!-- BREAKING -->
+<div class="breaking-bar">
+  <div class="breaking-inner">
+    <span class="breaking-label">速報</span>
+    <span class="breaking-text">【続報】AZUKI氏、masuを追い新幹線で移動中と判明 ― masu氏の黒猫シアへの接触疑惑と合わせ注視</span>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">トップ</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="#">事件・速報</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>masu氏ストーカー疑惑</span>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main-wrap">
+  <main class="article-main">
+    <div class="article-header">
+      <div class="article-tags">
+        <span class="atag atag-red">悲報</span>
+        <span class="atag atag-gold">続報あり</span>
+        <span class="atag atag-gray">事件・速報</span>
+      </div>
+      <h1 class="article-title">【悲報】masu氏、ネッ友である黒猫シア をリアルでストーカーしてしまう　― AZUKI氏も現在新幹線で追跡中</h1>
+      <div class="article-meta">
+        <span class="article-meta-item">📅 2026年6月6日（土）掲載</span>
+        <span class="article-meta-item">✏️ SNR界隈ニュース編集部</span>
+        <span class="update-badge">最終更新 2026/06/06 11:26</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <p class="article-lead">masuが黒猫シアを、リアルでエンカしようとしているのが現情報です。尚、AZUKI氏はmasuを追う形で、現在新幹線にて移動中であることが確認されています。</p>
+
+      <p>SNR界隈に激震が走った。ネット上の交流を中心に活動してきたmasu氏が、同じくSNR界隈で知られる黒猫シア氏を、リアルで「エンカ（エンカウント）」しようとしているとの情報が、複数のルートから本編集部に入った。</p>
+
+      <p>黒猫シア氏はmasu氏のいわゆる「ネッ友」であり、これまで両者の交流はオンライン上に留まっていたとされている。しかし今回、masu氏がリアルでの接触を試みているとの疑惑が浮上し、SNR界隈内で大きな波紋を呼んでいる。</p>
+
+      <h2>AZUKI氏の動向</h2>
+
+      <p>さらに驚くべき情報も入った。AZUKI氏については当初「追います」という発言のみが確認されていたが、続報によりAZUKI氏はmasu氏本人を追跡する立場であることが明らかになった。</p>
+
+      <div class="info-box">
+        <strong>【続報・確認情報 — 11:26時点】</strong>
+        AZUKI氏は現在、masu氏を追う形で<strong>新幹線にて移動中</strong>であることが確認された。AZUKI氏の目的地および現在地の詳細については現在取材中。情報が入り次第、随時更新する。
+      </div>
+
+      <p>本件については現在も情報収集中であり、編集部では引き続き各方面への取材を続けている。黒猫シア氏の安全が確認されるまで、SNR界隈ニュースとして動向を注視していく方針だ。</p>
+
+      <h2>背景・界隈の反応</h2>
+
+      <p>SNR界隈では近年、ネット上の人間関係がリアルに波及するケースが散見されており、今回の件もその一例として注目が集まっている。識者からは「オンラインとオフラインの境界線を巡る問題」として捉える声も上がっている。</p>
+
+      <p>界隈内では既にこの件が広まっており、黒猫シア氏を案じる声や、masu氏・AZUKI氏の行動を心配する声が多数寄せられている。</p>
+
+      <div class="warning-box">
+        <strong>⚠ 編集部注</strong>
+        本記事は入手した情報を速報としてお届けするものです。状況は刻一刻と変化しており、続報が入り次第この記事を更新します。情報の提供・訂正はAZUKI氏のDMまでお願いします。
+      </div>
+
+      <div class="update-box">
+        <strong>【更新履歴】</strong><br>
+        2026/06/06 11:26 ― AZUKI氏が新幹線で移動中との情報を追記。AZUKI氏の立場（masu氏を追う側）を修正。<br>
+        2026/06/06 掲載 ― 初報公開。
+      </div>
+    </div>
+
+    <!-- SHARE -->
+    <div class="share-area">
+      <span class="share-label">この記事をシェア：</span>
+      <button class="share-btn share-x" onclick="window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(document.title),'_blank')">𝕏 ポスト</button>
+      <button class="share-btn share-line">LINE</button>
+      <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(location.href);this.textContent='コピー完了！';setTimeout(()=>this.textContent='URLをコピー',2000)">URLをコピー</button>
+    </div>
+
+    <!-- RELATED -->
+    <div class="related-articles">
+      <div class="related-title">関連記事</div>
+      <div class="related-item" onclick="location.href='index.html'">
+        <div class="related-img">SNR</div>
+        <div>
+          <div class="related-item-title">SNR界隈ニュース、本日より創刊。界隈の動向をリアルタイムでお届け</div>
+          <div class="related-item-date">2026年6月6日</div>
+        </div>
+      </div>
+      <div class="related-item">
+        <div class="related-img">速報</div>
+        <div>
+          <div class="related-item-title">【続報待ち】黒猫シア氏の現在地・安否は？編集部が引き続き取材中</div>
+          <div class="related-item-date">2026年6月6日</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="side-ad">広告</div>
+
+    <div class="side-block">
+      <div class="side-block-head red">🔥 アクセスランキング</div>
+      <div class="side-block-body">
+        <div class="ranking-item">
+          <span class="ranking-num">1</span>
+          <span class="ranking-item-title">【悲報】masu氏、黒猫シアをリアルでストーカーしてしまう</span>
+        </div>
+        <div class="ranking-item">
+          <span class="ranking-num n2">2</span>
+          <span class="ranking-item-title">AZUKI氏、masuを追い新幹線で移動中と判明</span>
+        </div>
+        <div class="ranking-item">
+          <span class="ranking-num n3">3</span>
+          <span class="ranking-item-title">SNR界隈ニュース、本日より創刊</span>
+        </div>
+        <div class="ranking-item">
+          <span class="ranking-num" style="color:#bbb;">4</span>
+          <span class="ranking-item-title">黒猫シア氏とは何者か？SNR界隈での活動まとめ</span>
+        </div>
+        <div class="ranking-item">
+          <span class="ranking-num" style="color:#bbb;">5</span>
+          <span class="ranking-item-title">ネッ友とリアルエンカ、界隈で賛否両論</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-block">
+      <div class="side-block-head">📌 最新記事</div>
+      <div class="side-block-body">
+        <div class="ranking-item">
+          <span class="ranking-item-title">【速報】AZUKI氏、現在新幹線移動中と確認 <span style="font-size:11px;color:#999;">11:26</span></span>
+        </div>
+        <div class="ranking-item">
+          <span class="ranking-item-title">masu氏のストーカー疑惑、界隈に波紋 <span style="font-size:11px;color:#999;">掲載</span></span>
+        </div>
+        <div class="ranking-item">
+          <span class="ranking-item-title">SNR界隈ニュース創刊のお知らせ <span style="font-size:11px;color:#999;">創刊</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-block">
+      <div class="side-block-head">🏷 タグ</div>
+      <div class="side-tag-cloud">
+        <span class="side-tag">masu</span>
+        <span class="side-tag">黒猫シア</span>
+        <span class="side-tag">AZUKI</span>
+        <span class="side-tag">ストーカー</span>
+        <span class="side-tag">リアルエンカ</span>
+        <span class="side-tag">新幹線</span>
+        <span class="side-tag">ネッ友</span>
+        <span class="side-tag">SNR界隈</span>
+        <span class="side-tag">速報</span>
+      </div>
+    </div>
+
+    <div class="side-ad">広告</div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">SNR界隈ニュース</div>
+    <div class="footer-links">
+      <a href="index.html">トップ</a>
+      <a href="#">このサイトについて</a>
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">お問い合わせ（AZUKI氏DM）</a>
+    </div>
+    <div class="footer-copy">© 2026 SNR界隈ニュース — 非公式ファンメディア。掲載情報は報告時点のものです。</div>
+  </div>
+</footer>
+
+</body>
+</html>
