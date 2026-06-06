@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【悲報】しゃけ、あずきにブロックされる | SNR界隈ニュース</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--bg:#f2f2f2;--paper:#fff;--ink:#111;--ink2:#333;--ink3:#666;--ink4:#999;--red:#d00000;--border:#ddd;--border2:#eee;--link:#0a4fa8;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',sans-serif;font-size:14px;line-height:1.7;}
+a{color:var(--link);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.topbar{background:#111;color:#ccc;font-size:11px;padding:4px 0;}
+.topbar-inner{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;}
+.masthead{background:#fff;border-bottom:3px solid #111;padding:10px 0 0;}
+.masthead-inner{max-width:1100px;margin:0 auto;padding:0 16px;}
+.masthead-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:8px;gap:16px;}
+.site-logo{font-family:'Noto Serif JP',serif;font-size:32px;font-weight:700;color:#111;letter-spacing:-0.5px;line-height:1;text-decoration:none;flex-shrink:0;}
+.site-logo span{color:var(--red);font-size:11px;display:block;font-family:'Noto Sans JP',sans-serif;font-weight:400;letter-spacing:1px;margin-top:2px;}
+.gnav{background:#111;border-bottom:2px solid var(--red);}
+.gnav-inner{max-width:1100px;margin:0 auto;display:flex;}
+.gnav a{color:#ddd;font-size:13px;padding:9px 14px;display:block;border-right:1px solid #333;white-space:nowrap;transition:background 0.1s,color 0.1s;}
+.gnav a:hover,.gnav a.active{background:var(--red);color:#fff;text-decoration:none;}
+.breaking-bar{background:var(--red);color:#fff;padding:7px 0;}
+.breaking-inner{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:10px;}
+.breaking-label{background:#fff;color:var(--red);font-size:11px;font-weight:700;padding:2px 8px;white-space:nowrap;border-radius:2px;flex-shrink:0;font-family:'Noto Serif JP',serif;letter-spacing:1px;}
+.breaking-text{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.breadcrumb{background:#fff;border-bottom:1px solid var(--border);padding:6px 0;}
+.breadcrumb-inner{max-width:1100px;margin:0 auto;padding:0 16px;font-size:12px;color:var(--ink3);display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.breadcrumb-inner a{color:var(--link);}
+.main-wrap{max-width:1100px;margin:0 auto;padding:20px 16px;display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start;}
+@media(max-width:768px){.main-wrap{grid-template-columns:1fr;}}
+.article-header{margin-bottom:16px;}
+.article-tags{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;}
+.atag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;letter-spacing:0.5px;}
+.atag-red{background:var(--red);color:#fff;}
+.atag-gold{background:#fff3cd;color:#856404;border:1px solid #ffc107;}
+.atag-gray{background:#e9ecef;color:#495057;border:1px solid #ccc;}
+.atag-blue{background:#e8f0fb;color:#0a4fa8;border:1px solid #c5d8ee;}
+.article-title{font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;line-height:1.45;color:#111;margin-bottom:10px;}
+.article-meta{display:flex;align-items:center;gap:16px;font-size:12px;color:var(--ink3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:7px 0;margin-bottom:14px;flex-wrap:wrap;}
+.update-badge{background:#fff3cd;border:1px solid #ffc107;color:#856404;font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;}
+.article-body{font-size:15px;line-height:1.9;color:#222;}
+.article-body p{margin-bottom:1.1rem;}
+.article-lead{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:600;line-height:1.8;border-left:4px solid var(--red);padding:10px 14px;margin-bottom:1.25rem;background:#fff5f5;color:#111;}
+.article-body h2{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;border-left:4px solid #111;padding:4px 0 4px 12px;margin:1.5rem 0 0.75rem;color:#111;}
+.info-box{background:#e8f0fb;border-left:4px solid #0a4fa8;padding:12px 16px;margin:1.25rem 0;font-size:14px;color:#0a3d7a;line-height:1.8;}
+.info-box strong{color:#0a4fa8;font-weight:700;display:block;margin-bottom:4px;}
+.warning-box{background:#fff8e1;border:1px solid #ffc107;border-left:4px solid #f0a500;padding:12px 16px;margin:1.25rem 0;font-size:14px;color:#5c4000;line-height:1.8;}
+.warning-box strong{color:#f0a500;font-weight:700;display:block;margin-bottom:4px;}
+
+/* EVIDENCE / SCREENSHOT */
+.evidence-block{background:#1e1e2e;border-radius:8px;padding:16px;margin:1.25rem 0;}
+.evidence-label{font-size:11px;color:#888;margin-bottom:8px;letter-spacing:1px;font-weight:700;}
+.evidence-block img{width:100%;border-radius:4px;display:block;}
+.evidence-caption{font-size:12px;color:#aaa;margin-top:8px;line-height:1.5;}
+
+/* DISCORD-STYLE QUOTE */
+.discord-msg{background:#2b2d31;border-radius:4px;padding:12px 14px;margin:10px 0;border-left:4px solid #5865f2;font-family:'Noto Sans JP',sans-serif;}
+.discord-name{font-size:13px;font-weight:700;color:#e3e5e8;margin-bottom:4px;}
+.discord-name .role{font-size:11px;font-weight:400;background:#5865f2;color:#fff;padding:1px 6px;border-radius:3px;margin-left:6px;}
+.discord-text{font-size:14px;color:#dcddde;line-height:1.6;}
+.discord-time{font-size:11px;color:#72767d;margin-left:8px;font-weight:400;}
+
+.share-area{display:flex;align-items:center;gap:8px;padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:1.5rem 0;flex-wrap:wrap;}
+.share-label{font-size:12px;color:var(--ink3);font-weight:500;}
+.share-btn{font-size:12px;font-weight:700;padding:5px 14px;border-radius:3px;cursor:pointer;border:none;}
+.share-x{background:#000;color:#fff;}
+.share-line{background:#06c755;color:#fff;}
+.share-copy{background:#e9ecef;color:#333;border:1px solid #ccc;}
+.related-articles{margin-top:1.5rem;}
+.related-title{font-size:14px;font-weight:700;border-bottom:2px solid #111;padding-bottom:6px;margin-bottom:12px;}
+.related-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--border2);cursor:pointer;}
+.related-item:last-child{border-bottom:none;}
+.related-thumb{width:80px;height:54px;background:#e9ecef;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:#999;font-family:'Noto Serif JP',serif;font-weight:700;text-align:center;line-height:1.4;}
+.related-item-title{font-size:13px;font-weight:500;line-height:1.5;color:#111;}
+.related-item-date{font-size:11px;color:var(--ink4);margin-top:4px;}
+.side-block{background:#fff;border:1px solid var(--border);margin-bottom:16px;}
+.side-head{background:#111;color:#fff;font-size:13px;font-weight:700;padding:8px 12px;letter-spacing:0.5px;}
+.side-head.red{background:var(--red);}
+.side-body{padding:10px 12px;}
+.ranking-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--border2);cursor:pointer;}
+.ranking-item:last-child{border-bottom:none;}
+.rnum{font-size:20px;font-weight:700;color:var(--red);min-width:22px;font-family:'Noto Serif JP',serif;line-height:1;}
+.rnum.n2{color:#888;}.rnum.n3{color:#c97c2e;}.rnum.nx{color:#bbb;}
+.ritem-title{font-size:13px;line-height:1.5;color:#111;}
+.side-tag-cloud{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;}
+.stag{font-size:12px;padding:3px 10px;border:1px solid var(--border);color:var(--ink2);cursor:default;}
+.ad-slot{margin-bottom:16px;text-align:center;}
+.ad-label{font-size:10px;color:#bbb;text-align:center;margin-bottom:2px;letter-spacing:1px;}
+.ad-slot a{display:inline-block;border:1px solid #e0e0e0;overflow:hidden;background:#fafafa;}
+.ad-slot img{display:block;max-width:100%;height:auto;}
+.ad-banner-article{text-align:center;margin:1.5rem 0;}
+footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
+.footer-inner{max-width:1100px;margin:0 auto;padding:0 16px;}
+.footer-logo{font-family:'Noto Serif JP',serif;font-size:18px;color:#fff;margin-bottom:8px;}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;}
+.footer-links a{font-size:12px;color:#888;}
+.footer-links a:hover{color:#fff;}
+.footer-copy{font-size:11px;color:#555;border-top:1px solid #333;padding-top:12px;margin-top:12px;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div style="display:flex;gap:12px;"><span>2026年6月6日（土）</span><span style="color:#777;">☀ 24°C</span></div>
+    <span style="color:#555;">非公式ファンメディア</span>
+  </div>
+</div>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-top">
+      <a href="index.html" class="site-logo">SNR界隈ニュース<span>SNR KAIWA NEWS — 界隈の今をいち早く</span></a>
+      <div style="text-align:center;">
+        <div class="ad-label">広告</div>
+        <a href="https://www.amazon.co.jp/?tag=snrnews-22" target="_blank" rel="noopener">
+          <img src="https://images-na.ssl-images-amazon.com/images/G/09/associates/ads/banner/468x60_bluegreybannerV3._CB485932970_.gif" width="468" height="60" alt="Amazon.co.jp" style="border:1px solid #eee;display:block;" onerror="this.parentElement.parentElement.style.display='none'">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="gnav">
+    <div class="gnav-inner">
+      <a href="index.html">トップ</a>
+      <a href="article1.html">事件・速報</a>
+    </div>
+  </div>
+</div>
+
+<div class="breaking-bar">
+  <div class="breaking-inner">
+    <span class="breaking-label">速報</span>
+    <span class="breaking-text">【新着】しゃけ氏、あずき氏にDiscordでブロックされる ― 共通フレンドも消え「終わった」と嘆く</span>
+  </div>
+</div>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">トップ</a>
+    <span>›</span>
+    <span>事件・速報</span>
+    <span>›</span>
+    <span>しゃけ氏ブロック事件</span>
+  </div>
+</div>
+
+<div class="main-wrap">
+  <main>
+    <div class="article-header">
+      <div class="article-tags">
+        <span class="atag atag-red">悲報</span>
+        <span class="atag atag-gray">事件・速報</span>
+        <span class="atag atag-blue">Discord</span>
+      </div>
+      <h1 class="article-title">【悲報】しゃけ、あずきにブロックされる　― 「単純に死んでもらえる？」発言が引き金か、共通フレも消滅</h1>
+      <div class="article-meta">
+        <span>📅 2026年6月6日（土）掲載</span>
+        <span>✏️ SNR界隈ニュース編集部</span>
+        <span class="update-badge">13:08 更新</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <p class="article-lead">SNR界隈にまた悲報。しゃけごはん。（@眠剤と安定剤ください）氏が、azq（あずき）氏にDiscord上でブロックされたことが判明。共通フレンドも消え、本人は「終わった…」と絶望している。</p>
+
+      <p>6月6日13時07分頃、しゃけごはん。氏がDiscordの「Make it a Quote」ボットを使用し、azq（あずき）氏の発言「単純に死んでもらえる？」を引用画像として生成・投稿したことが発端となった。</p>
+
+      <h2>発端となった「Make it a Quote」投稿</h2>
+
+      <p>しゃけごはん。氏は同ボットで生成した引用画像を投稿。あずき氏の「単純に死んでもらえる？」という発言を画像化したもので、投稿後しゃけごはん。氏本人は「素材豊富だぜ()」とコメントしていた。</p>
+
+      <div class="evidence-block">
+        <div class="evidence-label">📎 証拠画像 1 — Make it a Quote 投稿とあずき氏のブロック反応</div>
+        <img src="/mnt/user-data/uploads/1780732767453_image.png" alt="Discordスクリーンショット1">
+        <div class="evidence-caption">しゃけごはん。氏がMake it a Quoteでazq（あずき）氏の発言を画像化。あずき氏は即座に「ブロックしました」と返答した（13:07）</div>
+      </div>
+
+      <p>これに対し、あずき氏は即座に「ブロックしました」と一言だけ返信。感情的な反論も説明もなく、淡々とした対応が逆に衝撃を与えた。</p>
+
+      <h2>しゃけ氏「あまってマジでブロックされた」</h2>
+
+      <p>ブロックを確認したしゃけごはん。氏は「あまってマジでブロックされた」と驚きを隠せない様子でコメント。さらに事態は予想外の方向へ展開する。</p>
+
+      <div class="evidence-block">
+        <div class="evidence-label">📎 証拠画像 2 — その後の展開と白夜紅葉（MM）氏の介入</div>
+        <img src="/mnt/user-data/uploads/1780732772183_image.png" alt="Discordスクリーンショット2">
+        <div class="evidence-caption">白夜紅葉（MM）氏が「おい、そんなこと言うなって。」と仲裁に入るも、しゃけごはん。氏は「共通フレ消えた」「終わった…」と絶望（13:08）</div>
+      </div>
+
+      <div class="info-box">
+        <strong>【現場の声 — Discordログより】</strong>
+        白夜紅葉（MM）氏：「おい、そんなこと言うなって。まあまあ。落ち着け落ち着け… Hint:何回も言うと処罰あるよ…？」<br>
+        しゃけごはん。氏（13:08）：「共通フレ消えた　ありアクションできない　終わった…」
+      </div>
+
+      <p>ブロックの結果、しゃけごはん。氏とあずき氏の共通フレンドが消滅。リアクションすらできない状況となり、しゃけごはん。氏は「終わった…」と深刻な様子を見せた。</p>
+
+      <h2>白夜紅葉（MM）氏が仲裁に入るも…</h2>
+
+      <p>白夜紅葉（MM）氏がazq（あずき）氏へのリプライ形式で「おい、そんなこと言うなって」と仲裁を試みたが、ブロックはそのまま継続中とみられる。また同氏は「何回も言うと処罰あるよ…？」とも発言しており、この件が過去にも類似の経緯があった可能性を示唆している。</p>
+
+      <div class="warning-box">
+        <strong>⚠ 編集部注</strong>
+        本記事はDiscordのスクリーンショットをもとに構成しています。引用発言「単純に死んでもらえる？」は文脈によっては冗談・煽り表現である可能性もあります。いずれにせよブロックは現実のものとして確認されています。情報提供・訂正はAZUKI氏のDMまで。
+      </div>
+    </div>
+
+    <div class="share-area">
+      <span class="share-label">この記事をシェア：</span>
+      <button class="share-btn share-x" onclick="window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(document.title),'_blank')">𝕏 ポスト</button>
+      <button class="share-btn share-line" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(document.title+'\n'+location.href),'_blank')">LINE</button>
+      <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(location.href);this.textContent='コピー完了！';setTimeout(()=>this.textContent='URLをコピー',2000)">URLをコピー</button>
+    </div>
+
+    <div class="related-articles">
+      <div class="related-title">関連記事</div>
+      <div class="related-item" onclick="location.href='article1.html'">
+        <div class="related-thumb">悲報</div>
+        <div>
+          <div class="related-item-title">【悲報】masu氏、ネッ友である黒猫シア をリアルでストーカーしてしまう</div>
+          <div class="related-item-date">2026年6月6日</div>
+        </div>
+      </div>
+      <div class="related-item" onclick="location.href='index.html'">
+        <div class="related-thumb">お知らせ</div>
+        <div>
+          <div class="related-item-title">SNR界隈ニュース、本日より創刊</div>
+          <div class="related-item-date">2026年6月6日</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <aside>
+    <div class="ad-slot">
+      <div class="ad-label">PR</div>
+      <a href="https://www.amazon.co.jp/kindle-dbs/storefront?storeType=ebooks" target="_blank" rel="noopener">
+        <img src="https://images-fe.ssl-images-amazon.com/images/G/09/Kindle/dp/2019/KU/JP_KU_300x250_SB_022019._CB468670522_.jpg" width="300" height="250" alt="Kindle Unlimited" style="border:1px solid #eee;" onerror="this.parentElement.parentElement.style.display='none'">
+      </a>
+    </div>
+
+    <div class="side-block">
+      <div class="side-head red">🔥 アクセスランキング</div>
+      <div class="side-body">
+        <div class="ranking-item" onclick="location.href='article2.html'">
+          <span class="rnum">1</span>
+          <span class="ritem-title">【悲報】しゃけ、あずきにブロックされる</span>
+        </div>
+        <div class="ranking-item" onclick="location.href='article1.html'">
+          <span class="rnum n2">2</span>
+          <span class="ritem-title">【悲報】masu氏、黒猫シアをリアルでストーカーしてしまう</span>
+        </div>
+        <div class="ranking-item" onclick="location.href='article1.html'">
+          <span class="rnum n3">3</span>
+          <span class="ritem-title">AZUKI氏、masuを追い新幹線で移動中と判明</span>
+        </div>
+        <div class="ranking-item">
+          <span class="rnum nx">4</span>
+          <span class="ritem-title">SNR界隈ニュース、本日より創刊</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-block">
+      <div class="side-head">🏷 タグ</div>
+      <div class="side-tag-cloud">
+        <span class="stag">しゃけごはん</span><span class="stag">あずき</span><span class="stag">ブロック</span>
+        <span class="stag">Discord</span><span class="stag">白夜紅葉</span><span class="stag">Make it a Quote</span>
+        <span class="stag">SNR界隈</span><span class="stag">悲報</span><span class="stag">速報</span>
+      </div>
+    </div>
+
+    <div class="ad-slot">
+      <div class="ad-label">PR</div>
+      <a href="https://play.google.com/store" target="_blank" rel="noopener">
+        <img src="https://www.gstatic.com/android/market_images/web/play_promo/en_us/badge_web_generic.png" width="276" height="80" alt="Google Play" style="background:#fff;padding:4px;border:1px solid #eee;" onerror="this.parentElement.parentElement.style.display='none'">
+      </a>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">SNR界隈ニュース</div>
+    <div class="footer-links">
+      <a href="index.html">トップ</a>
+      <a href="article1.html">事件・速報</a>
+      <a href="article2.html">しゃけブロック事件</a>
+    </div>
+    <div class="footer-copy">© 2026 SNR界隈ニュース — 非公式ファンメディア。掲載情報は報告時点のものです。</div>
+  </div>
+</footer>
+
+</body>
+</html>
