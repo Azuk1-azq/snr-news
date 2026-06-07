@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-     <!-- 必須設定 -->
-  <meta property="og:title" content="記事検索 | SNR界隈ニュース" />
-  <meta property="og:description" content="記事検索" />
-  <meta property="og:url" content="https://snr-news.f5.si/" />
-  <meta property="og:image" content="https://snr-news.f5.si/logo.png" />
-  <meta property="og:type" content="article" />
-  <!-- Discord / X (旧Twitter) 用の追加設定（画像を大きく綺麗に見せる） -->
-  <meta name="twitter:card" content="summary_large_image" />
-  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>記事検索 | SNR界隈ニュース</title>
@@ -18,8 +9,10 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{--bg:#f2f2f2;--paper:#fff;--ink:#111;--ink2:#333;--ink3:#666;--ink4:#999;--red:#d00000;--border:#ddd;--border2:#eee;--link:#0a4fa8;}
+html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',sans-serif;font-size:14px;line-height:1.7;}
-a{color:var(--link);text-decoration:none;}a:hover{text-decoration:underline;}
+a{color:var(--link);text-decoration:none;}
+a:hover{text-decoration:underline;}
 .masthead{background:#fff;border-bottom:3px solid #111;padding:10px 0 0;}
 .masthead-inner{max-width:1100px;margin:0 auto;padding:0 16px;}
 .masthead-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:8px;gap:16px;}
@@ -29,54 +22,14 @@ a{color:var(--link);text-decoration:none;}a:hover{text-decoration:underline;}
 .gnav-inner{max-width:1100px;margin:0 auto;display:flex;}
 .gnav a{color:#ddd;font-size:13px;padding:9px 14px;display:block;border-right:1px solid #333;white-space:nowrap;transition:background 0.1s,color 0.1s;}
 .gnav a:hover,.gnav a.active{background:var(--red);color:#fff;text-decoration:none;}
-.container{max-width:780px;margin:0 auto;padding:28px 16px;}
-.page-title{font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;border-left:4px solid var(--red);padding:2px 0 2px 12px;margin-bottom:20px;}
-/* 検索ボックス */
-.search-hero{background:#fff;border:1px solid var(--border);padding:24px;margin-bottom:24px;}
-.search-hero-label{font-size:12px;color:var(--ink3);margin-bottom:8px;}
-.search-row{display:flex;gap:8px;}
-.search-row input{flex:1;padding:11px 16px;border:2px solid var(--border);border-radius:3px;font-size:15px;font-family:'Noto Sans JP',sans-serif;outline:none;transition:border-color 0.15s;}
-.search-row input:focus{border-color:var(--red);}
-.search-row button{padding:11px 22px;background:var(--red);color:#fff;border:none;border-radius:3px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Noto Sans JP',sans-serif;white-space:nowrap;}
-.search-row button:hover{background:#a00000;}
-.suggest-wrap{margin-top:14px;}
-.suggest-label{font-size:11px;color:var(--ink4);margin-bottom:7px;}
-.suggest-tags{display:flex;flex-wrap:wrap;gap:6px;}
-.stag{font-size:12px;padding:4px 12px;border:1px solid var(--border);border-radius:2px;color:var(--ink2);cursor:pointer;transition:all 0.12s;}
-.stag:hover{background:#111;color:#fff;border-color:#111;}
-/* 結果 */
-.result-meta{font-size:13px;color:var(--ink3);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
-.result-meta strong{color:var(--ink);font-weight:700;}
-.article-item{background:#fff;border:1px solid var(--border);border-left:4px solid var(--border);padding:16px;margin-bottom:10px;cursor:pointer;transition:box-shadow 0.15s,border-left-color 0.15s;}
-.article-item:hover{box-shadow:0 2px 10px rgba(0,0,0,0.09);border-left-color:var(--red);}
-.article-item.hidden{display:none;}
-.ai-tags{display:flex;gap:6px;margin-bottom:7px;flex-wrap:wrap;}
-.htag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;letter-spacing:0.5px;}
-.htag-red{background:var(--red);color:#fff;}
-.htag-solved{background:#d4edda;color:#155724;border:1px solid #c3e6cb;}
-.htag-blue{background:#e8f0fb;color:#0a4fa8;border:1px solid #c5d8ee;}
-.htag-gray{background:#e9ecef;color:#495057;border:1px solid #ccc;}
-.ai-title{font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;line-height:1.45;color:#111;margin-bottom:6px;}
-.ai-title mark{background:#fff59d;color:#111;padding:0 2px;}
-.ai-summary{font-size:13px;color:var(--ink3);line-height:1.7;margin-bottom:6px;}
-.ai-summary mark{background:#fff59d;color:#111;padding:0 2px;}
-.ai-meta{font-size:11px;color:var(--ink4);display:flex;gap:12px;flex-wrap:wrap;}
-.no-result{text-align:center;padding:48px 0;color:var(--ink3);}
-.no-result p{font-size:15px;margin-bottom:8px;}
-.no-result small{font-size:12px;}
-.initial-state{text-align:center;padding:48px 0;color:var(--ink3);}
-.initial-state p{font-size:28px;margin-bottom:8px;}
-.initial-state small{font-size:13px;}
-footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
-.footer-inner{max-width:1100px;margin:0 auto;padding:0 16px;}
-.footer-logo{font-family:'Noto Serif JP',serif;font-size:18px;color:#fff;margin-bottom:8px;}
-.footer-links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;}
-.footer-links a{font-size:12px;color:#888;}
-.footer-links a:hover{color:#fff;}
-.footer-copy{font-size:11px;color:#555;border-top:1px solid #333;padding-top:12px;margin-top:12px;}
-/* ヘッダー広告 */
+.breadcrumb{background:#fff;border-bottom:1px solid var(--border);padding:6px 0;}
+.breadcrumb-inner{max-width:1100px;margin:0 auto;padding:0 16px;font-size:12px;color:var(--ink3);display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.breadcrumb-inner a{color:var(--link);}
+.section-head{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;border-left:4px solid var(--red);border-bottom:1px solid var(--border);padding:4px 0 8px 10px;margin-bottom:14px;color:#111;}
+.ad-label{font-size:10px;color:#bbb;text-align:center;margin-bottom:3px;letter-spacing:1px;}
+.ad-slot{margin-bottom:16px;text-align:center;}
 .ad-hw{text-align:center;}
-.ad-header{width:468px;height:60px;background:linear-gradient(135deg,#0057b8,#003d82);display:flex;align-items:center;justify-content:space-between;padding:0 20px;box-sizing:border-box;border:1px solid #004aaa;}
+.ad-header{width:468px;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;box-sizing:border-box;border:1px solid #004aaa;background:linear-gradient(135deg,#0057b8,#003d82);}
 .ad-header-left{display:flex;align-items:center;gap:10px;}
 .ad-header-icon{font-size:24px;}
 .ad-header-name{color:#fff;font-size:15px;font-weight:700;letter-spacing:1px;}
@@ -84,19 +37,81 @@ footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
 .ad-header-body{color:#fff;font-size:12px;text-align:center;line-height:1.4;}
 .ad-header-body strong{font-size:14px;color:#ffe066;display:block;}
 .ad-header-btn{background:#ffe066;color:#003d82;font-size:11px;font-weight:700;padding:6px 14px;border-radius:3px;white-space:nowrap;}
-.ad-label{font-size:10px;color:#bbb;text-align:center;margin-bottom:3px;letter-spacing:1px;}
-@media(max-width:768px){.ad-hw{display:none;}}
+.ad-side1{background:linear-gradient(160deg,#1a1a2e,#16213e);padding:18px 16px;box-sizing:border-box;border:1px solid #2a2a4e;text-align:center;}
+.ad-side1-brand{font-size:13px;font-weight:700;color:#b0b8cc;letter-spacing:2px;margin-bottom:4px;}
+.ad-side1-icon{font-size:48px;margin:8px 0;}
+.ad-side1-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;}
+.ad-side1-sub{font-size:11px;color:#90a0b8;margin-bottom:4px;}
+.ad-side1-spec{font-size:11px;color:#a0c4ff;margin-bottom:14px;}
+.ad-side1-btn{display:inline-block;background:#e8001c;color:#fff;font-size:12px;font-weight:700;padding:8px 24px;border-radius:2px;}
+.ad-side2{background:linear-gradient(135deg,#bf0000,#8b0000);padding:14px 16px;box-sizing:border-box;border:1px solid #9e0000;text-align:center;}
+.ad-side2-brand{font-size:13px;font-weight:700;color:#ffcdd2;letter-spacing:1px;margin-bottom:6px;}
+.ad-side2-title{font-size:17px;font-weight:700;color:#fff;margin-bottom:4px;}
+.ad-side2-badge{display:inline-block;background:#ffe066;color:#8b0000;font-size:12px;font-weight:700;padding:3px 12px;border-radius:2px;margin-bottom:8px;}
+.ad-side2-sub{font-size:11px;color:#ffcdd2;margin-bottom:12px;line-height:1.5;}
+.ad-side2-btn{display:inline-block;background:#fff;color:#bf0000;font-size:12px;font-weight:700;padding:7px 22px;border-radius:2px;}
+.side-block{background:#fff;border:1px solid var(--border);margin-bottom:16px;}
+.side-head{background:#111;color:#fff;font-size:13px;font-weight:700;padding:8px 12px;letter-spacing:0.5px;}
+.side-head.red{background:var(--red);}
+.side-body{padding:10px 12px;}
+.ranking-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--border2);cursor:pointer;}
+.ranking-item:last-child{border-bottom:none;}
+.rnum{font-size:20px;font-weight:700;color:var(--red);min-width:22px;font-family:'Noto Serif JP',serif;line-height:1;}
+.rnum.n2{color:#888;}.rnum.n3{color:#c97c2e;}.rnum.nx{color:#bbb;}
+.ritem-title{font-size:13px;line-height:1.5;color:#111;}
+.side-tag-cloud{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;}
+.stag{font-size:12px;padding:3px 10px;border:1px solid var(--border);color:var(--ink2);cursor:pointer;}
+.stag:hover{background:#111;color:#fff;border-color:#111;}
+.htag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;letter-spacing:0.5px;}
+.htag-red{background:var(--red);color:#fff;}
+.htag-solved{background:#d4edda;color:#155724;border:1px solid #c3e6cb;}
+.htag-gray{background:#e9ecef;color:#495057;border:1px solid #ccc;}
+.htag-blue{background:#e8f0fb;color:#0a4fa8;border:1px solid #c5d8ee;}
+.htag-new{background:#e53935;color:#fff;}
+footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
+.footer-inner{max-width:1100px;margin:0 auto;padding:0 16px;}
+.footer-logo{font-family:'Noto Serif JP',serif;font-size:18px;color:#fff;margin-bottom:8px;}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;}
+.footer-links a{font-size:12px;color:#888;}
+.footer-links a:hover{color:#fff;}
+.footer-copy{font-size:11px;color:#555;border-top:1px solid #333;padding-top:12px;margin-top:12px;}
+@media(max-width:768px){.main-wrap,.main-grid{grid-template-columns:1fr!important;}.ad-hw{display:none;}}
+
+.container{max-width:780px;margin:0 auto;padding:28px 16px;}
+.page-title{font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;border-left:4px solid #555;padding:2px 0 2px 12px;margin-bottom:20px;}
+.search-hero{background:#fff;border:1px solid var(--border);padding:24px;margin-bottom:24px;}
+.search-hero-label{font-size:12px;color:var(--ink3);margin-bottom:8px;}
+.search-row{display:flex;gap:8px;}
+.search-row input{flex:1;padding:11px 16px;border:2px solid var(--border);border-radius:3px;font-size:15px;font-family:'Noto Sans JP',sans-serif;outline:none;transition:border-color 0.15s;}
+.search-row input:focus{border-color:#555;}
+.search-row button{padding:11px 22px;background:#333;color:#fff;border:none;border-radius:3px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Noto Sans JP',sans-serif;}
+.search-row button:hover{background:#111;}
+.suggest-wrap{margin-top:14px;}
+.suggest-label{font-size:11px;color:var(--ink4);margin-bottom:7px;}
+.suggest-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.result-meta{font-size:13px;color:var(--ink3);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.result-meta strong{color:var(--ink);font-weight:700;}
+.article-item{background:#fff;border:1px solid var(--border);border-left:4px solid #ccc;padding:16px;margin-bottom:10px;cursor:pointer;transition:box-shadow 0.15s,border-left-color 0.15s;}
+.article-item:hover{box-shadow:0 2px 10px rgba(0,0,0,0.08);border-left-color:#555;}
+.ai-tags{display:flex;gap:6px;margin-bottom:7px;flex-wrap:wrap;}
+.ai-title{font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;line-height:1.45;color:#111;margin-bottom:6px;}
+.ai-title mark,.ai-summary mark{background:#fff59d;color:#111;padding:0 2px;}
+.ai-summary{font-size:13px;color:var(--ink3);line-height:1.7;margin-bottom:6px;}
+.ai-meta{font-size:11px;color:var(--ink4);display:flex;gap:12px;flex-wrap:wrap;}
+.no-result{text-align:center;padding:48px 0;color:var(--ink3);}
+.initial-state{text-align:center;padding:48px 0;color:var(--ink3);}
+.initial-state p{font-size:28px;margin-bottom:8px;}
+.initial-state small{font-size:13px;}
 </style>
 </head>
 <body>
-
 <div class="masthead">
   <div class="masthead-inner">
     <div class="masthead-top">
       <a href="index.html" class="site-logo">SNR界隈ニュース<span>SNR KAIWA NEWS — 界隈の今をいち早く</span></a>
       <div class="ad-hw">
         <div class="ad-label">広告</div>
-        <div class="ad-header">
+        <div class="ad-header" style="background:linear-gradient(135deg,#e47911,#c45500);border-color:#c45500;">
           <div class="ad-header-left">
             <div class="ad-header-icon">📦</div>
             <div><div class="ad-header-name">Amazon</div><span class="ad-header-tagline">Prime</span></div>
@@ -107,19 +122,15 @@ footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
       </div>
     </div>
   </div>
-  <div class="gnav">
-    <div class="gnav-inner">
+  <div class="gnav"><div class="gnav-inner">
       <a href="index.html">トップ</a>
       <a href="news.html">事件・速報</a>
-      <a href="search.html" class="active">記事検索</a>
+      <a href="search.html"class="active">記事検索</a>
       <a href="about.html">運営情報</a>
-    </div>
-  </div>
+    </div></div>
 </div>
-
 <div class="container">
   <div class="page-title">🔍 記事検索</div>
-
   <div class="search-hero">
     <div class="search-hero-label">キーワードで記事を検索</div>
     <div class="search-row">
@@ -137,19 +148,52 @@ footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
         <span class="stag" onclick="setQ('ブロック')">ブロック</span>
         <span class="stag" onclick="setQ('解決済')">解決済</span>
         <span class="stag" onclick="setQ('Discord')">Discord</span>
-        <span class="stag" onclick="setQ('悲報')">悲報</span>
+        <span class="stag" onclick="setQ('白夜紅葉')">白夜紅葉</span>
         <span class="stag" onclick="setQ('新幹線')">新幹線</span>
       </div>
     </div>
   </div>
-
   <div id="resultMeta" class="result-meta" style="display:none;"></div>
-
   <div id="results">
     <div class="initial-state"><p>🗞️</p><small>キーワードを入力して記事を検索してください</small></div>
   </div>
 </div>
-
+<script>
+const DB = [
+  {
+    url:'article2.html',
+    tags:[{t:'Discord',c:'htag-blue'},{t:'事件・速報',c:'htag-gray'}],
+    title:'しゃけごはん。氏、あずき氏にDiscordでブロックされる ― 引用投稿が発端、白夜紅葉氏が仲裁',
+    summary:'しゃけごはん。氏がMake it a Quoteを使用してあずき氏の発言を引用画像化したことを契機に、あずき氏がブロックを実施。共通フレンドも消滅し、白夜紅葉（MM）氏が仲裁に入った。',
+    date:'2026年6月6日（土）13:08',
+    keywords:'しゃけ あずき ブロック discord make it a quote 共通フレ 白夜紅葉 事件'
+  },
+  {
+    url:'article1.html',
+    tags:[{t:'事件・速報',c:'htag-gray'},{t:'✅ 解決済',c:'htag-solved'}],
+    title:'masu氏とAZUKI氏をめぐるリアルエンカ疑惑、解決済みと確認 ― AZUKI氏は向かっていなかった',
+    summary:'masu氏が黒猫シア氏のもとへ向かっているとの情報が浮上。AZUKI氏も関与するとの続報があったが、後に事実でないことが確認され解決済みとなった。',
+    date:'2026年6月6日（土）掲載',
+    keywords:'masu 黒猫シア azuki リアルエンカ 新幹線 解決済 ネッ友 事件'
+  }
+];
+function hl(t,q){if(!q)return t;return t.replace(new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi'),m=>`<mark>${m}</mark>`);}
+function doSearch(){
+  const q=document.getElementById('searchInput').value.trim();
+  const meta=document.getElementById('resultMeta');
+  const res=document.getElementById('results');
+  if(!q){meta.style.display='none';res.innerHTML='<div class="initial-state"><p>🗞️</p><small>キーワードを入力して記事を検索してください</small></div>';return;}
+  const ql=q.toLowerCase();
+  const matched=DB.filter(a=>a.keywords.toLowerCase().includes(ql)||a.title.toLowerCase().includes(ql)||a.summary.toLowerCase().includes(ql));
+  meta.style.display='block';
+  meta.innerHTML=`「<strong>${q}</strong>」の検索結果：<strong>${matched.length}</strong> 件`;
+  if(!matched.length){res.innerHTML='<div class="no-result">😢 該当する記事が見つかりませんでした。<br><small>別のキーワードでお試しください。</small></div>';return;}
+  res.innerHTML=matched.map(a=>`<div class="article-item" onclick="location.href='${a.url}'"><div class="ai-tags">${a.tags.map(t=>`<span class="htag ${t.c}">${t.t}</span>`).join('')}</div><div class="ai-title">${hl(a.title,q)}</div><div class="ai-summary">${hl(a.summary,q)}</div><div class="ai-meta"><span>📅 ${a.date}</span><span>SNR界隈ニュース編集部</span></div></div>`).join('');
+}
+function setQ(kw){document.getElementById('searchInput').value=kw;doSearch();}
+const p=new URLSearchParams(location.search);
+if(p.get('q')){document.getElementById('searchInput').value=p.get('q');doSearch();}
+</script>
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">SNR界隈ニュース</div>
@@ -162,82 +206,5 @@ footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
     <div class="footer-copy">© 2026 SNR界隈ニュース — 非公式ファンメディア。掲載情報は報告時点のものです。</div>
   </div>
 </footer>
-
-<script>
-const DB = [
-  {
-    url: 'article2.html',
-    tags: ['悲報','Discord'],
-    tagClass: ['htag-red','htag-blue'],
-    title: '【悲報】しゃけ、あずきにブロックされる ― 「単純に死んでもらえる？」発言が引き金か、共通フレも消滅',
-    summary: 'しゃけごはん。氏がMake it a Quoteであずき氏の発言を引用画像化したところ、即座に「ブロックしました」と返答。共通フレンドも消え「終わった…」と絶望。白夜紅葉（MM）氏が仲裁に入るも状況変わらず。',
-    date: '2026年6月6日（土）13:08',
-    keywords: 'しゃけ あずき ブロック discord make it a quote 悲報 共通フレ 白夜紅葉'
-  },
-  {
-    url: 'article1.html',
-    tags: ['悲報','✅ 解決済'],
-    tagClass: ['htag-red','htag-solved'],
-    title: '【解決済】masu氏、ネッ友である黒猫シア をリアルでストーカーしてしまう ― AZUKI氏は向かっていないことが判明',
-    summary: 'masu氏が黒猫シア氏をリアルでエンカしようとしているとの情報が浮上。当初AZUKI氏が新幹線で移動中との続報もあったが、後にAZUKI氏は向かっていないことが判明し解決済みとなった。',
-    date: '2026年6月6日（土）掲載',
-    keywords: 'masu 黒猫シア azuki ストーカー リアルエンカ 新幹線 解決済 悲報 ネッ友'
-  }
-];
-
-function highlight(text, q) {
-  if (!q) return text;
-  const escaped = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return text.replace(new RegExp(escaped, 'gi'), m => `<mark>${m}</mark>`);
-}
-
-function doSearch() {
-  const q = document.getElementById('searchInput').value.trim();
-  const meta = document.getElementById('resultMeta');
-  const res = document.getElementById('results');
-
-  if (!q) {
-    meta.style.display = 'none';
-    res.innerHTML = '<div class="initial-state"><p>🗞️</p><small>キーワードを入力して記事を検索してください</small></div>';
-    return;
-  }
-
-  const ql = q.toLowerCase();
-  const matched = DB.filter(a =>
-    a.keywords.toLowerCase().includes(ql) ||
-    a.title.toLowerCase().includes(ql) ||
-    a.summary.toLowerCase().includes(ql)
-  );
-
-  meta.style.display = 'block';
-  meta.innerHTML = `「<strong>${q}</strong>」の検索結果：<strong>${matched.length}</strong> 件`;
-
-  if (matched.length === 0) {
-    res.innerHTML = `<div class="no-result"><p>😢 該当する記事が見つかりませんでした。</p><small>別のキーワードでお試しください。</small></div>`;
-    return;
-  }
-
-  res.innerHTML = matched.map(a => `
-    <div class="article-item" onclick="location.href='${a.url}'">
-      <div class="ai-tags">${a.tags.map((t,i)=>`<span class="htag ${a.tagClass[i]}">${t}</span>`).join('')}</div>
-      <div class="ai-title">${highlight(a.title, q)}</div>
-      <div class="ai-summary">${highlight(a.summary, q)}</div>
-      <div class="ai-meta"><span>📅 ${a.date}</span><span>SNR界隈ニュース編集部</span></div>
-    </div>
-  `).join('');
-}
-
-function setQ(kw) {
-  document.getElementById('searchInput').value = kw;
-  doSearch();
-}
-
-// URLパラメータから検索クエリを引き継ぐ
-const params = new URLSearchParams(location.search);
-if (params.get('q')) {
-  document.getElementById('searchInput').value = params.get('q');
-  doSearch();
-}
-</script>
 </body>
 </html>

@@ -1,18 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-     <!-- 必須設定 -->
-  <meta property="og:title" content="【悲報→解決済】masu氏、ネッ友である黒猫シア氏をリアルでストーカーしてしまう | SNR界隈ニュース" />
-  <meta property="og:description" content="SNR界隈に激震が走った。ネット上の交流を中心に活動してきたmasu氏が、同じくSNR界隈で知られる黒猫シア氏を、リアルで「エンカ（エンカウント）」しようとしているとの情..." />
-  <meta property="og:url" content="https://snr-news.f5.si/" />
-  <meta property="og:image" content="https://snr-news.f5.si/logo.png" />
-  <meta property="og:type" content="article" />
-  <!-- Discord / X (旧Twitter) 用の追加設定（画像を大きく綺麗に見せる） -->
-  <meta name="twitter:card" content="summary_large_image" />
-  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【悲報→解決済】masu氏、ネッ友である黒猫シア氏をリアルでストーカーしてしまう | SNR界隈ニュース</title>
+<title>masu氏とAZUKI氏をめぐるリアルエンカ疑惑（解決済） | SNR界隈ニュース</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -22,8 +13,6 @@ html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',sans-serif;font-size:14px;line-height:1.7;}
 a{color:var(--link);text-decoration:none;}
 a:hover{text-decoration:underline;}
-.topbar{background:#111;color:#ccc;font-size:11px;padding:4px 0;}
-.topbar-inner{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;}
 .masthead{background:#fff;border-bottom:3px solid #111;padding:10px 0 0;}
 .masthead-inner{max-width:1100px;margin:0 auto;padding:0 16px;}
 .masthead-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:8px;gap:16px;}
@@ -36,8 +25,59 @@ a:hover{text-decoration:underline;}
 .breadcrumb{background:#fff;border-bottom:1px solid var(--border);padding:6px 0;}
 .breadcrumb-inner{max-width:1100px;margin:0 auto;padding:0 16px;font-size:12px;color:var(--ink3);display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
 .breadcrumb-inner a{color:var(--link);}
+.section-head{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;border-left:4px solid var(--red);border-bottom:1px solid var(--border);padding:4px 0 8px 10px;margin-bottom:14px;color:#111;}
+.ad-label{font-size:10px;color:#bbb;text-align:center;margin-bottom:3px;letter-spacing:1px;}
+.ad-slot{margin-bottom:16px;text-align:center;}
+.ad-hw{text-align:center;}
+.ad-header{width:468px;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;box-sizing:border-box;border:1px solid #004aaa;background:linear-gradient(135deg,#0057b8,#003d82);}
+.ad-header-left{display:flex;align-items:center;gap:10px;}
+.ad-header-icon{font-size:24px;}
+.ad-header-name{color:#fff;font-size:15px;font-weight:700;letter-spacing:1px;}
+.ad-header-tagline{color:#90c8ff;font-size:10px;display:block;margin-top:1px;}
+.ad-header-body{color:#fff;font-size:12px;text-align:center;line-height:1.4;}
+.ad-header-body strong{font-size:14px;color:#ffe066;display:block;}
+.ad-header-btn{background:#ffe066;color:#003d82;font-size:11px;font-weight:700;padding:6px 14px;border-radius:3px;white-space:nowrap;}
+.ad-side1{background:linear-gradient(160deg,#1a1a2e,#16213e);padding:18px 16px;box-sizing:border-box;border:1px solid #2a2a4e;text-align:center;}
+.ad-side1-brand{font-size:13px;font-weight:700;color:#b0b8cc;letter-spacing:2px;margin-bottom:4px;}
+.ad-side1-icon{font-size:48px;margin:8px 0;}
+.ad-side1-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;}
+.ad-side1-sub{font-size:11px;color:#90a0b8;margin-bottom:4px;}
+.ad-side1-spec{font-size:11px;color:#a0c4ff;margin-bottom:14px;}
+.ad-side1-btn{display:inline-block;background:#e8001c;color:#fff;font-size:12px;font-weight:700;padding:8px 24px;border-radius:2px;}
+.ad-side2{background:linear-gradient(135deg,#bf0000,#8b0000);padding:14px 16px;box-sizing:border-box;border:1px solid #9e0000;text-align:center;}
+.ad-side2-brand{font-size:13px;font-weight:700;color:#ffcdd2;letter-spacing:1px;margin-bottom:6px;}
+.ad-side2-title{font-size:17px;font-weight:700;color:#fff;margin-bottom:4px;}
+.ad-side2-badge{display:inline-block;background:#ffe066;color:#8b0000;font-size:12px;font-weight:700;padding:3px 12px;border-radius:2px;margin-bottom:8px;}
+.ad-side2-sub{font-size:11px;color:#ffcdd2;margin-bottom:12px;line-height:1.5;}
+.ad-side2-btn{display:inline-block;background:#fff;color:#bf0000;font-size:12px;font-weight:700;padding:7px 22px;border-radius:2px;}
+.side-block{background:#fff;border:1px solid var(--border);margin-bottom:16px;}
+.side-head{background:#111;color:#fff;font-size:13px;font-weight:700;padding:8px 12px;letter-spacing:0.5px;}
+.side-head.red{background:var(--red);}
+.side-body{padding:10px 12px;}
+.ranking-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--border2);cursor:pointer;}
+.ranking-item:last-child{border-bottom:none;}
+.rnum{font-size:20px;font-weight:700;color:var(--red);min-width:22px;font-family:'Noto Serif JP',serif;line-height:1;}
+.rnum.n2{color:#888;}.rnum.n3{color:#c97c2e;}.rnum.nx{color:#bbb;}
+.ritem-title{font-size:13px;line-height:1.5;color:#111;}
+.side-tag-cloud{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;}
+.stag{font-size:12px;padding:3px 10px;border:1px solid var(--border);color:var(--ink2);cursor:pointer;}
+.stag:hover{background:#111;color:#fff;border-color:#111;}
+.htag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;letter-spacing:0.5px;}
+.htag-red{background:var(--red);color:#fff;}
+.htag-solved{background:#d4edda;color:#155724;border:1px solid #c3e6cb;}
+.htag-gray{background:#e9ecef;color:#495057;border:1px solid #ccc;}
+.htag-blue{background:#e8f0fb;color:#0a4fa8;border:1px solid #c5d8ee;}
+.htag-new{background:#e53935;color:#fff;}
+footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
+.footer-inner{max-width:1100px;margin:0 auto;padding:0 16px;}
+.footer-logo{font-family:'Noto Serif JP',serif;font-size:18px;color:#fff;margin-bottom:8px;}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;}
+.footer-links a{font-size:12px;color:#888;}
+.footer-links a:hover{color:#fff;}
+.footer-copy{font-size:11px;color:#555;border-top:1px solid #333;padding-top:12px;margin-top:12px;}
+@media(max-width:768px){.main-wrap,.main-grid{grid-template-columns:1fr!important;}.ad-hw{display:none;}}
+
 .main-wrap{max-width:1100px;margin:0 auto;padding:20px 16px;display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start;}
-@media(max-width:768px){.main-wrap{grid-template-columns:1fr;}.ad-header-wrap{display:none;}}
 .article-header{margin-bottom:16px;}
 .article-tags{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;}
 .atag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;letter-spacing:0.5px;}
@@ -49,16 +89,16 @@ a:hover{text-decoration:underline;}
 .update-badge{background:#d4edda;border:1px solid #c3e6cb;color:#155724;font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;}
 .article-body{font-size:15px;line-height:1.9;color:#222;}
 .article-body p{margin-bottom:1.1rem;}
-.article-lead{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:600;line-height:1.8;border-left:4px solid var(--red);padding:10px 14px;margin-bottom:1.25rem;background:#fff5f5;color:#111;}
-.article-body h2{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;border-left:4px solid #111;padding:4px 0 4px 12px;margin:1.5rem 0 0.75rem;color:#111;}
-.info-box{background:#e8f0fb;border-left:4px solid #0a4fa8;padding:12px 16px;margin:1.25rem 0;font-size:14px;color:#0a3d7a;line-height:1.8;}
-.info-box strong{color:#0a4fa8;font-weight:700;display:block;margin-bottom:4px;}
-.solved-box{background:#e8f5e9;border-left:4px solid #388e3c;border:1px solid #c3e6cb;padding:12px 16px;margin:1.25rem 0;font-size:14px;color:#1b5e20;line-height:1.8;}
+.article-lead{font-family:'Noto Serif JP',serif;font-size:16px;line-height:1.8;border-left:4px solid var(--border);padding:10px 14px;margin-bottom:1.25rem;background:#f8f8f8;color:#333;}
+.article-body h2{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;border-left:4px solid #555;padding:4px 0 4px 12px;margin:1.5rem 0 0.75rem;color:#111;}
+.info-box{background:#f0f4f8;border-left:4px solid #aab8c8;padding:12px 16px;margin:1.25rem 0;font-size:14px;color:#334;line-height:1.8;}
+.info-box strong{color:#334;font-weight:700;display:block;margin-bottom:4px;}
+.solved-box{background:#e8f5e9;border:1px solid #c3e6cb;border-left:4px solid #388e3c;padding:12px 16px;margin:1.25rem 0;font-size:14px;color:#1b5e20;line-height:1.8;}
 .solved-box strong{color:#2e7d32;font-weight:700;display:block;margin-bottom:4px;}
-.warning-box{background:#fff8e1;border:1px solid #ffc107;border-left:4px solid #f0a500;padding:12px 16px;margin:1.25rem 0;font-size:14px;color:#5c4000;line-height:1.8;}
-.warning-box strong{color:#f0a500;font-weight:700;display:block;margin-bottom:4px;}
-.update-box{background:#e8f5e9;border:1px solid #81c784;border-left:4px solid #388e3c;padding:12px 16px;font-size:13px;color:#1b5e20;line-height:1.8;margin-top:1.5rem;}
-.update-box strong{color:#2e7d32;font-weight:700;}
+.note-box{background:#fafafa;border:1px solid var(--border);border-left:4px solid #aaa;padding:12px 16px;margin:1.25rem 0;font-size:13px;color:var(--ink3);line-height:1.8;}
+.note-box strong{color:var(--ink2);font-weight:700;display:block;margin-bottom:4px;}
+.update-box{background:#f5f5f5;border:1px solid var(--border);padding:12px 16px;font-size:13px;color:var(--ink3);line-height:1.8;margin-top:1.5rem;}
+.update-box strong{color:var(--ink2);font-weight:700;}
 .share-area{display:flex;align-items:center;gap:8px;padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:1.5rem 0;flex-wrap:wrap;}
 .share-label{font-size:12px;color:var(--ink3);font-weight:500;}
 .share-btn{font-size:12px;font-weight:700;padding:5px 14px;border-radius:3px;cursor:pointer;border:none;}
@@ -72,142 +112,79 @@ a:hover{text-decoration:underline;}
 .related-thumb{width:80px;height:54px;background:#e9ecef;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:#999;font-family:'Noto Serif JP',serif;font-weight:700;text-align:center;line-height:1.4;}
 .related-item-title{font-size:13px;font-weight:500;line-height:1.5;color:#111;}
 .related-item-date{font-size:11px;color:var(--ink4);margin-top:4px;}
-.side-block{background:#fff;border:1px solid var(--border);margin-bottom:16px;}
-.side-head{background:#111;color:#fff;font-size:13px;font-weight:700;padding:8px 12px;letter-spacing:0.5px;}
-.side-head.red{background:var(--red);}
-.side-body{padding:10px 12px;}
-.ranking-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--border2);cursor:pointer;}
-.ranking-item:last-child{border-bottom:none;}
-.rnum{font-size:20px;font-weight:700;color:var(--red);min-width:22px;font-family:'Noto Serif JP',serif;line-height:1;}
-.rnum.n2{color:#888;}.rnum.n3{color:#c97c2e;}.rnum.nx{color:#bbb;}
-.ritem-title{font-size:13px;line-height:1.5;color:#111;}
-.side-tag-cloud{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;}
-.stag{font-size:12px;padding:3px 10px;border:1px solid var(--border);color:var(--ink2);cursor:default;}
-.ad-label{font-size:10px;color:#bbb;text-align:center;margin-bottom:3px;letter-spacing:1px;}
-.ad-slot{margin-bottom:16px;text-align:center;}
-.ad-mid{text-align:center;margin:1.5rem 0;}
-footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
-.footer-inner{max-width:1100px;margin:0 auto;padding:0 16px;}
-.footer-logo{font-family:'Noto Serif JP',serif;font-size:18px;color:#fff;margin-bottom:8px;}
-.footer-links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;}
-.footer-links a{font-size:12px;color:#888;}
-.footer-links a:hover{color:#fff;}
-.footer-copy{font-size:11px;color:#555;border-top:1px solid #333;padding-top:12px;margin-top:12px;}
 </style>
 </head>
 <body>
-
-<div class="topbar">
-  <div class="topbar-inner">
-    <div style="display:flex;gap:12px;"><span>2026年6月6日（土）</span><span style="color:#777;">☀ 24°C</span></div>
-    <span style="color:#555;">非公式ファンメディア</span>
-  </div>
-</div>
-
 <div class="masthead">
   <div class="masthead-inner">
     <div class="masthead-top">
       <a href="index.html" class="site-logo">SNR界隈ニュース<span>SNR KAIWA NEWS — 界隈の今をいち早く</span></a>
-      <!-- 偽広告バナー（ヘッダー） -->
-      <div class="ad-header-wrap" style="text-align:center;">
+      <div class="ad-hw">
         <div class="ad-label">広告</div>
-        <svg width="468" height="60" xmlns="http://www.w3.org/2000/svg" style="display:block;border:1px solid #e0e0e0;">
-          <rect width="468" height="60" fill="#FF6B00"/>
-          <rect x="0" y="0" width="468" height="60" fill="url(#hg)"/>
-          <defs><linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#FF6B00"/><stop offset="100%" style="stop-color:#FF3D00"/></linearGradient></defs>
-          <text x="20" y="22" font-family="sans-serif" font-size="11" fill="#fff" opacity="0.8">PR</text>
-          <text x="234" y="28" font-family="sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">🍔 マクドナルド公式アプリ</text>
-          <text x="234" y="48" font-family="sans-serif" font-size="12" fill="#ffe" text-anchor="middle">クーポン毎日更新中！ 今すぐダウンロード →</text>
-        </svg>
+        <div class="ad-header" style="background:linear-gradient(135deg,#0057b8,#003d82);border-color:#004aaa;">
+          <div class="ad-header-left">
+            <div class="ad-header-icon">📶</div>
+            <div><div class="ad-header-name">SoftBank</div><span class="ad-header-tagline">5G対応</span></div>
+          </div>
+          <div class="ad-header-body"><strong>月額 2,970円〜</strong>乗り換えで最大 30,000円 還元</div>
+          <div class="ad-header-btn">詳細はこちら</div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="gnav">
-    <div class="gnav-inner">
+  <div class="gnav"><div class="gnav-inner">
       <a href="index.html">トップ</a>
-      <a href="news.html" class="active">事件・速報</a>
+      <a href="news.html"class="active">事件・速報</a>
       <a href="search.html">記事検索</a>
       <a href="about.html">運営情報</a>
-    </div>
-  </div>
+    </div></div>
 </div>
-
 <div class="breadcrumb">
   <div class="breadcrumb-inner">
-    <a href="index.html">トップ</a>
-    <span>›</span>
-    <span>事件・速報</span>
-    <span>›</span>
-    <span>masu氏ストーカー疑惑</span>
+    <a href="index.html">トップ</a><span>›</span>
+    <a href="news.html">事件・速報</a><span>›</span>
+    <span>masu氏リアルエンカ疑惑</span>
   </div>
 </div>
-
 <div class="main-wrap">
   <main>
     <div class="article-header">
       <div class="article-tags">
-        <span class="atag atag-red">悲報</span>
-        <span class="atag atag-solved">✅ 解決済</span>
         <span class="atag atag-gray">事件・速報</span>
+        <span class="atag atag-solved">✅ 解決済</span>
       </div>
-      <h1 class="article-title">【悲報→解決済】masu氏、ネッ友である黒猫シア をリアルでストーカーしてしまう　― AZUKI氏は向かっていないことが判明</h1>
+      <h1 class="article-title">masu氏とAZUKI氏をめぐるリアルエンカ疑惑、解決済みと確認 ― AZUKI氏は向かっていなかった</h1>
       <div class="article-meta">
         <span>📅 2026年6月6日（土）掲載</span>
         <span>✏️ SNR界隈ニュース編集部</span>
         <span class="update-badge">✅ 解決済み</span>
       </div>
     </div>
-
     <div class="article-body">
-      <p class="article-lead">masuが黒猫シアを、リアルでエンカしようとしているとの情報が入っていたが、その後の取材により<strong>AZUKI氏は黒猫シア氏のもとへ向かっていないことが判明</strong>。本件は解決済みとなった。</p>
+      <p class="article-lead">SNR界隈のメンバーであるmasu氏が、同界隈の黒猫シア氏をリアルでエンカウントしようとしているとの情報が寄せられた。当初AZUKI氏も関与するとの続報があったが、後に事実でないことが確認され、本件は解決済みとなった。</p>
 
-      <p>SNR界隈に激震が走った。ネット上の交流を中心に活動してきたmasu氏が、同じくSNR界隈で知られる黒猫シア氏を、リアルで「エンカ（エンカウント）」しようとしているとの情報が、複数のルートから本編集部に入った。</p>
+      <p>2026年6月6日、masu氏がオンライン上の知人である黒猫シア氏に対し、リアルで会いに行こうとしているとの情報が複数のルートから編集部に入った。両氏はこれまでオンライン上での交流が中心であったとされており、この報告に対して界隈内で様々な反応が広がった。</p>
 
-      <p>黒猫シア氏はmasu氏のいわゆる「ネッ友」であり、これまで両者の交流はオンライン上に留まっていたとされている。しかし今回、masu氏がリアルでの接触を試みているとの疑惑が浮上し、SNR界隈内で大きな波紋を呼んでいた。</p>
-
-      <!-- 記事中偽広告 -->
-      <div class="ad-mid">
-        <div class="ad-label">PR</div>
-        <svg width="728" height="90" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto;max-width:100%;border:1px solid #e0e0e0;">
-          <rect width="728" height="90" fill="#1a237e"/>
-          <rect width="728" height="90" fill="url(#mg)"/>
-          <defs><linearGradient id="mg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#1565c0"/><stop offset="100%" style="stop-color:#0d47a1"/></linearGradient></defs>
-          <circle cx="70" cy="45" r="30" fill="#fff" opacity="0.1"/>
-          <text x="70" y="52" font-family="sans-serif" font-size="28" fill="#fff" text-anchor="middle">💳</text>
-          <text x="390" y="35" font-family="sans-serif" font-size="20" font-weight="bold" fill="#fff" text-anchor="middle">SNRカード PLATINUM</text>
-          <text x="390" y="58" font-family="sans-serif" font-size="13" fill="#90caf9" text-anchor="middle">年会費永年無料 ｜ ポイント還元率最大3.5% ｜ 最短翌日発行</text>
-          <text x="390" y="76" font-family="sans-serif" font-size="11" fill="#64b5f6" text-anchor="middle">今なら入会で5,000ポイントプレゼント！</text>
-          <rect x="610" y="28" width="100" height="34" rx="4" fill="#ff6f00"/>
-          <text x="660" y="50" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">申し込む</text>
-        </svg>
-      </div>
-
-      <h2>AZUKI氏の動向 ―「向かっていない」と判明</h2>
-
-      <p>当初、AZUKI氏は「追います」と発言しており、新幹線で移動中との情報も一時流れていた。しかしその後の取材により、<strong>AZUKI氏は黒猫シア氏のもとへ向かっていないことが確認された。</strong>誤情報をお届けしたことをお詫び申し上げる。</p>
+      <h2>AZUKI氏の関与について</h2>
+      <p>初期の報告では、AZUKI氏が「追います」と発言したとされ、新幹線で移動中との続報も一時流れた。しかしその後の取材により、<strong>AZUKI氏は黒猫シア氏のもとへは向かっておらず</strong>、当初の情報は不正確であったことが判明した。</p>
 
       <div class="solved-box">
-        <strong>【✅ 訂正・解決報告】</strong>
-        AZUKI氏が黒猫シア氏のもとへ向かっているとの報道は誤りであったことが判明した。AZUKI氏は向かっていない。編集部は訂正しお詫び申し上げる。本件はこれをもって<strong>解決済み</strong>とする。
+        <strong>【✅ 解決報告・訂正】</strong>
+        AZUKI氏が現地へ向かっているとした報道は誤りであった。編集部は当該情報を訂正するとともに、関係者に対してお詫び申し上げる。本件はこれをもって解決済みとする。
       </div>
 
-      <p>本件については引き続き動向を注視するが、現時点でmasu氏・黒猫シア氏・AZUKI氏のいずれにも問題のある状況は確認されていない。</p>
+      <h2>背景</h2>
+      <p>SNR界隈ではオンラインで交流するメンバーが多く、オフラインでの接触についての受け止め方は人それぞれ異なる。本件については事態が解決していることを確認しており、関係者への不必要な憶測や言及は控えることが望ましい。</p>
 
-      <h2>背景・界隈の反応</h2>
-
-      <p>SNR界隈では近年、ネット上の人間関係がリアルに波及するケースが散見されており、今回の件もその一例として注目が集まっている。識者からは「オンラインとオフラインの境界線を巡る問題」として捉える声も上がっている。</p>
-
-      <p>界隈内では既にこの件が広まっており、黒猫シア氏を案じる声や、masu氏・AZUKI氏の行動を心配する声が多数寄せられていた。</p>
-
-      <div class="warning-box">
-        <strong>⚠ 編集部注</strong>
-        本記事は入手した情報を速報としてお届けしたものです。誤情報が含まれていたことを深くお詫びします。情報の提供・訂正はAZUKI氏のDMまでお願いします。
+      <div class="note-box">
+        <strong>📝 編集部注</strong>
+        本記事は入手した情報をもとに速報として掲載したものです。誤情報が含まれていたことをお詫びします。今後も情報の正確性を高めるよう努めます。訂正・情報提供はAZUKI氏のDMまでお願いします。
       </div>
 
       <div class="update-box">
         <strong>【更新履歴】</strong><br>
-        2026/06/06 （最終）― AZUKI氏は黒猫シア氏のもとへ向かっていないことが判明。本件を解決済みとする。訂正をお詫び申し上げます。<br>
-        2026/06/06 11:26 ― AZUKI氏が新幹線で移動中との情報を追記。※後に誤報と判明。<br>
+        2026/06/06 最終更新 ― AZUKI氏が向かっていないことを確認。解決済みに変更。誤報についてお詫び。<br>
+        2026/06/06 11:26 ― AZUKI氏が新幹線移動中との情報を追記（後に誤報と判明）。<br>
         2026/06/06 掲載 ― 初報公開。
       </div>
     </div>
@@ -218,88 +195,66 @@ footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
       <button class="share-btn share-line" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(document.title+'\n'+location.href),'_blank')">LINE</button>
       <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(location.href);this.textContent='コピー完了！';setTimeout(()=>this.textContent='URLをコピー',2000)">URLをコピー</button>
     </div>
-
     <div class="related-articles">
       <div class="related-title">関連記事</div>
       <div class="related-item" onclick="location.href='article2.html'">
-        <div class="related-thumb">悲報</div>
+        <div class="related-thumb">速報</div>
         <div>
-          <div class="related-item-title">【悲報】しゃけ、あずきにブロックされる ― 共通フレも消滅</div>
+          <div class="related-item-title">しゃけごはん。氏、あずき氏にDiscordでブロックされる</div>
           <div class="related-item-date">2026年6月6日</div>
         </div>
       </div>
     </div>
   </main>
-
-  <aside>
-    <!-- 偽広告1（縦バナー） -->
-    <div class="ad-slot">
-      <div class="ad-label">PR</div>
-      <svg width="300" height="250" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto;border:1px solid #e0e0e0;">
-        <rect width="300" height="250" fill="#f8f9fa"/>
-        <rect width="300" height="60" fill="#e53935"/>
-        <text x="150" y="25" font-family="sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">🎮 ゲーミングPC特集</text>
-        <text x="150" y="45" font-family="sans-serif" font-size="11" fill="#ffcdd2" text-anchor="middle">今だけ最大40%OFF</text>
-        <rect x="30" y="75" width="240" height="100" rx="8" fill="#fff" stroke="#e0e0e0"/>
-        <text x="150" y="115" font-family="sans-serif" font-size="36" text-anchor="middle">🖥️</text>
-        <text x="150" y="148" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">RTX 5090 搭載モデル</text>
-        <text x="150" y="165" font-family="sans-serif" font-size="11" fill="#e53935" text-anchor="middle" font-weight="bold">¥198,000 → ¥118,800</text>
-        <rect x="50" y="190" width="200" height="36" rx="18" fill="#e53935"/>
-        <text x="150" y="213" font-family="sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">今すぐ購入する</text>
-        <text x="150" y="240" font-family="sans-serif" font-size="10" fill="#aaa" text-anchor="middle">※在庫限り。価格は変動する場合があります</text>
-      </svg>
-    </div>
-
-    <div class="side-block">
-      <div class="side-head red">🔥 アクセスランキング</div>
-      <div class="side-body">
-        <div class="ranking-item" onclick="location.href='article2.html'">
-          <span class="rnum">1</span>
-          <span class="ritem-title">【悲報】しゃけ、あずきにブロックされる</span>
-        </div>
-        <div class="ranking-item" onclick="location.href='article1.html'">
-          <span class="rnum n2">2</span>
-          <span class="ritem-title">【解決済】masu氏、黒猫シアをリアルでストーカーしてしまう</span>
-        </div>
-        <div class="ranking-item">
-          <span class="rnum n3">3</span>
-          <span class="ritem-title">SNR界隈ニュース、本日より創刊</span>
+    <aside>
+      <div class="ad-slot">
+        <div class="ad-label">PR</div>
+        <div class="ad-side1">
+          <div class="ad-side1-brand">🚗 TOYOTA</div>
+          <div class="ad-side1-icon">🚗</div>
+          <div class="ad-side1-title">新型クラウン</div>
+          <div class="ad-side1-sub">試乗申込受付中</div>
+          <div class="ad-side1-spec">燃費 28.4km/L ｜ 全国販売店にて</div>
+          <div class="ad-side1-btn">試乗を予約する</div>
         </div>
       </div>
-    </div>
-
-    <div class="side-block">
-      <div class="side-head">🏷 タグ</div>
-      <div class="side-tag-cloud">
-        <span class="stag">masu</span><span class="stag">黒猫シア</span><span class="stag">AZUKI</span>
-        <span class="stag">解決済</span><span class="stag">リアルエンカ</span>
-        <span class="stag">ネッ友</span><span class="stag">SNR界隈</span><span class="stag">速報</span>
+      <div class="side-block">
+        <div class="side-head red">🔥 アクセスランキング</div>
+        <div class="side-body">
+          <div class="ranking-item" onclick="location.href='article2.html'"><span class="rnum">1</span><span class="ritem-title">しゃけごはん。氏、あずき氏にDiscordでブロックされる</span></div>
+          <div class="ranking-item" onclick="location.href='article1.html'"><span class="rnum n2">2</span><span class="ritem-title">masu氏とAZUKI氏をめぐるリアルエンカ疑惑（解決済）</span></div>
+          <div class="ranking-item"><span class="rnum n3">3</span><span class="ritem-title">SNR界隈ニュース、本日より創刊</span></div>
+        </div>
       </div>
-    </div>
-
-    <!-- 偽広告2 -->
-    <div class="ad-slot">
-      <div class="ad-label">PR</div>
-      <svg width="300" height="160" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto;border:1px solid #e0e0e0;">
-        <rect width="300" height="160" fill="#1b1b2f"/>
-        <rect width="300" height="160" fill="url(#ag2)"/>
-        <defs><linearGradient id="ag2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1b1b2f"/><stop offset="100%" style="stop-color:#16213e"/></linearGradient></defs>
-        <circle cx="250" cy="30" r="50" fill="#0f3460" opacity="0.5"/>
-        <text x="150" y="45" font-family="sans-serif" font-size="15" font-weight="bold" fill="#e94560" text-anchor="middle">📱 SNRチャットアプリ</text>
-        <text x="150" y="68" font-family="sans-serif" font-size="12" fill="#a8dadc" text-anchor="middle">界隈の仲間とつながろう</text>
-        <text x="150" y="88" font-family="sans-serif" font-size="11" fill="#ccc" text-anchor="middle">✓ 匿名OK  ✓ 既読スルー通知なし</text>
-        <text x="150" y="106" font-family="sans-serif" font-size="11" fill="#ccc" text-anchor="middle">✓ ネッ友探しに特化</text>
-        <rect x="75" y="120" width="150" height="28" rx="14" fill="#e94560"/>
-        <text x="150" y="139" font-family="sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">無料でダウンロード</text>
-      </svg>
-    </div>
-  </aside>
+      <div class="side-block">
+        <div class="side-head">🏷 タグ</div>
+        <div class="side-tag-cloud">
+          <span class="stag" onclick="location.href='search.html?q=しゃけ'">しゃけ</span>
+          <span class="stag" onclick="location.href='search.html?q=あずき'">あずき</span>
+          <span class="stag" onclick="location.href='search.html?q=masu'">masu</span>
+          <span class="stag" onclick="location.href='search.html?q=黒猫シア'">黒猫シア</span>
+          <span class="stag" onclick="location.href='search.html?q=AZUKI'">AZUKI</span>
+          <span class="stag" onclick="location.href='search.html?q=ブロック'">ブロック</span>
+          <span class="stag" onclick="location.href='search.html?q=解決済'">解決済</span>
+          <span class="stag" onclick="location.href='search.html?q=Discord'">Discord</span>
+        </div>
+      </div>
+      <div class="ad-slot">
+        <div class="ad-label">PR</div>
+        <div class="ad-side2">
+          <div class="ad-side2-brand">🛒 Rakuten 楽天市場</div>
+          <div class="ad-side2-title">楽天スーパーSALE</div>
+          <div class="ad-side2-badge">ポイント最大 44倍！</div>
+          <div class="ad-side2-sub">期間限定開催中<br>対象商品を今すぐチェック</div>
+          <div class="ad-side2-btn">エントリーはこちら</div>
+        </div>
+      </div>
+    </aside>
 </div>
-
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">SNR界隈ニュース</div>
-        <div class="footer-links">
+    <div class="footer-links">
       <a href="index.html">トップ</a>
       <a href="news.html">事件・速報</a>
       <a href="search.html">記事検索</a>
@@ -308,6 +263,5 @@ footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
     <div class="footer-copy">© 2026 SNR界隈ニュース — 非公式ファンメディア。掲載情報は報告時点のものです。</div>
   </div>
 </footer>
-
 </body>
 </html>
