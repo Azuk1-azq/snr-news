@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+     <!-- 必須設定 -->
+  <meta property="og:title" content="運営情報 | SNR界隈ニュース" />
+  <meta property="og:description" content="運営情報" />
+  <meta property="og:url" content="https://snr-news.f5.si/" />
+  <meta property="og:image" content="https://snr-news.f5.si/logo.png" />
+  <meta property="og:type" content="article" />
+  <!-- Discord / X (旧Twitter) 用の追加設定（画像を大きく綺麗に見せる） -->
+  <meta name="twitter:card" content="summary_large_image" />
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>運営情報 | SNR界隈ニュース</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--bg:#f2f2f2;--paper:#fff;--ink:#111;--ink2:#333;--ink3:#666;--ink4:#999;--red:#d00000;--border:#ddd;--border2:#eee;--link:#0a4fa8;}
+body{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',sans-serif;font-size:14px;line-height:1.7;}
+a{color:var(--link);text-decoration:none;}a:hover{text-decoration:underline;}
+.masthead{background:#fff;border-bottom:3px solid #111;padding:10px 0 0;}
+.masthead-inner{max-width:1100px;margin:0 auto;padding:0 16px;}
+.masthead-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:8px;gap:16px;}
+.site-logo{font-family:'Noto Serif JP',serif;font-size:32px;font-weight:700;color:#111;letter-spacing:-0.5px;line-height:1;text-decoration:none;flex-shrink:0;}
+.site-logo span{color:var(--red);font-size:11px;display:block;font-family:'Noto Sans JP',sans-serif;font-weight:400;letter-spacing:1px;margin-top:2px;}
+.gnav{background:#111;border-bottom:2px solid var(--red);}
+.gnav-inner{max-width:1100px;margin:0 auto;display:flex;}
+.gnav a{color:#ddd;font-size:13px;padding:9px 14px;display:block;border-right:1px solid #333;white-space:nowrap;transition:background 0.1s,color 0.1s;}
+.gnav a:hover,.gnav a.active{background:var(--red);color:#fff;text-decoration:none;}
+.container{max-width:780px;margin:0 auto;padding:28px 16px;}
+.page-title{font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;border-left:4px solid var(--red);padding:2px 0 2px 12px;margin-bottom:24px;}
+.info-card{background:#fff;border:1px solid var(--border);margin-bottom:16px;}
+.info-card-head{background:#111;color:#fff;font-size:13px;font-weight:700;padding:9px 16px;letter-spacing:0.5px;}
+.info-card-body{padding:18px 20px;}
+.info-table{width:100%;border-collapse:collapse;font-size:14px;}
+.info-table tr{border-bottom:1px solid var(--border2);}
+.info-table tr:last-child{border-bottom:none;}
+.info-table th{width:130px;padding:10px 12px 10px 0;color:var(--ink3);font-weight:500;vertical-align:top;text-align:left;white-space:nowrap;}
+.info-table td{padding:10px 0;color:var(--ink2);line-height:1.7;}
+.info-card-body p{font-size:14px;color:var(--ink2);line-height:1.8;margin-bottom:10px;}
+.info-card-body p:last-child{margin-bottom:0;}
+.warning-box{background:#fff8e1;border:1px solid #ffc107;border-left:4px solid #f0a500;padding:12px 16px;font-size:13px;color:#5c4000;line-height:1.8;margin-bottom:16px;}
+.warning-box strong{color:#f0a500;font-weight:700;display:block;margin-bottom:4px;}
+.contact-box{background:#e8f0fb;border-left:4px solid #0a4fa8;padding:14px 18px;font-size:14px;color:#0a3d7a;line-height:1.9;}
+.contact-box strong{color:#0a4fa8;font-weight:700;display:block;margin-bottom:4px;}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;margin-left:6px;vertical-align:middle;}
+.badge-editor{background:#111;color:#fff;}
+.badge-dm{background:#0a4fa8;color:#fff;}
+/* 広告 */
+.ad-hw{text-align:center;}
+.ad-header{width:468px;height:60px;background:linear-gradient(135deg,#bf0000,#8b0000);display:flex;align-items:center;justify-content:space-between;padding:0 20px;box-sizing:border-box;border:1px solid #9e0000;}
+.ad-header-left{display:flex;align-items:center;gap:10px;}
+.ad-header-icon{font-size:24px;}
+.ad-header-name{color:#fff;font-size:15px;font-weight:700;letter-spacing:1px;}
+.ad-header-tagline{color:#ffcdd2;font-size:10px;display:block;margin-top:1px;}
+.ad-header-body{color:#fff;font-size:12px;text-align:center;line-height:1.4;}
+.ad-header-body strong{font-size:14px;color:#ffe066;display:block;}
+.ad-header-btn{background:#ffe066;color:#8b0000;font-size:11px;font-weight:700;padding:6px 14px;border-radius:3px;white-space:nowrap;}
+.ad-label{font-size:10px;color:#bbb;text-align:center;margin-bottom:3px;letter-spacing:1px;}
+@media(max-width:768px){.ad-hw{display:none;}}
+footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
+.footer-inner{max-width:1100px;margin:0 auto;padding:0 16px;}
+.footer-logo{font-family:'Noto Serif JP',serif;font-size:18px;color:#fff;margin-bottom:8px;}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;}
+.footer-links a{font-size:12px;color:#888;}
+.footer-links a:hover{color:#fff;}
+.footer-copy{font-size:11px;color:#555;border-top:1px solid #333;padding-top:12px;margin-top:12px;}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-top">
+      <a href="index.html" class="site-logo">SNR界隈ニュース<span>SNR KAIWA NEWS — 界隈の今をいち早く</span></a>
+      <div class="ad-hw">
+        <div class="ad-label">広告</div>
+        <div class="ad-header">
+          <div class="ad-header-left">
+            <div class="ad-header-icon">🛒</div>
+            <div><div class="ad-header-name">Rakuten</div><span class="ad-header-tagline">楽天市場</span></div>
+          </div>
+          <div class="ad-header-body"><strong>ポイント最大 44倍！</strong>楽天スーパーSALE 開催中</div>
+          <div class="ad-header-btn">今すぐチェック</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="gnav">
+    <div class="gnav-inner">
+      <a href="index.html">トップ</a>
+      <a href="news.html">事件・速報</a>
+      <a href="search.html">記事検索</a>
+      <a href="about.html" class="active">運営情報</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="page-title">📋 運営情報</div>
+
+  <div class="info-card">
+    <div class="info-card-head">📰 メディア基本情報</div>
+    <div class="info-card-body">
+      <table class="info-table">
+        <tr><th>メディア名</th><td>SNR界隈ニュース</td></tr>
+        <tr><th>略称</th><td>SNRニュース</td></tr>
+        <tr><th>創刊日</th><td>2026年6月6日（土）</td></tr>
+        <tr><th>種別</th><td>非公式ファンメディア（個人運営）</td></tr>
+        <tr><th>対象界隈</th><td>SNR界隈</td></tr>
+        <tr><th>更新頻度</th><td>随時（情報入手次第）</td></tr>
+        <tr><th>掲載内容</th><td>SNR界隈で発生した出来事・速報・事件・考察など</td></tr>
+        <tr><th>情報の信頼性</th><td>実績アリ</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-card-head">👥 編集部</div>
+    <div class="info-card-body">
+      <table class="info-table">
+        <tr>
+          <th>編集長</th>
+          <td>AZUKI <span class="badge badge-editor">編集長</span></td>
+        </tr>
+        <tr>
+          <th>情報受付</th>
+          <td>AZUKI氏のDiscord DM(_azq.azuki) <span class="badge badge-dm">DM受付中(約1~2日ほどで対応)</span></td>
+          <td>AZUKI氏のGmail(omigames.info@gmail.com) <span class="badge badge-dm">メール受付中(Discord推奨)(メールだと最長10日)</span></td>
+        </tr>
+        <tr>
+          <th>訂正依頼</th>
+          <td>AZUKI氏のDMまで。確認次第、速やかに記事を更新します。</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-card-head">📜 掲載方針・免責事項</div>
+    <div class="info-card-body">
+      <p>SNR界隈ニュースは、SNR界隈で発生した出来事を速報形式でお届けする非公式の個人ファンメディアです。公式メディアではありません。</p>
+      <p>掲載情報は報告・入手時点のものであり、状況が変化した場合には記事を更新します。誤情報が含まれる場合は速やかに訂正・お詫びを掲載します。</p>
+      <p>記事内容に事実との相違がある場合、または掲載に問題がある場合はAZUKI氏までご連絡ください。</p>
+    </div>
+  </div>
+
+  <div class="warning-box">
+    <strong>⚠ ご注意</strong>
+    本メディアは特定の人物・グループを誹謗中傷する意図はありません。事実と異なる情報があった場合は訂正します。
+  </div>
+
+  <div class="contact-box">
+    <strong>📩 お問い合わせ・情報提供</strong>
+    情報提供・誤報の指摘・掲載削除依頼などは <strong>上記「編集部」</strong> をご覧ください。<br>
+    確認次第、編集部にて対応いたします。
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">SNR界隈ニュース</div>
+    <div class="footer-links">
+      <a href="index.html">トップ</a>
+      <a href="news.html">事件・速報</a>
+      <a href="search.html">記事検索</a>
+      <a href="about.html">運営情報</a>
+    </div>
+    <div class="footer-copy">© 2026 SNR界隈ニュース — 非公式ファンメディア。掲載情報は報告時点のものです。</div>
+  </div>
+</footer>
+
+</body>
+</html>
