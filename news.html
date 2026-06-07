@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+     <!-- 必須設定 -->
+  <meta property="og:title" content="事件・速報 一覧 | SNR界隈ニュース" />
+  <meta property="og:description" content="検索所...。たったそれだけ。" />
+  <meta property="og:url" content="https://snr-news.f5.si/" />
+  <meta property="og:image" content="https://snr-news.f5.si/logo.png" />
+  <meta property="og:type" content="article" />
+  <!-- Discord / X (旧Twitter) 用の追加設定（画像を大きく綺麗に見せる） -->
+  <meta name="twitter:card" content="summary_large_image" />
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>事件・速報 一覧 | SNR界隈ニュース</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--bg:#f2f2f2;--paper:#fff;--ink:#111;--ink2:#333;--ink3:#666;--ink4:#999;--red:#d00000;--border:#ddd;--border2:#eee;--link:#0a4fa8;}
+body{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',sans-serif;font-size:14px;line-height:1.7;}
+a{color:var(--link);text-decoration:none;}a:hover{text-decoration:underline;}
+.masthead{background:#fff;border-bottom:3px solid #111;padding:10px 0 0;}
+.masthead-inner{max-width:1100px;margin:0 auto;padding:0 16px;}
+.masthead-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:8px;gap:16px;}
+.site-logo{font-family:'Noto Serif JP',serif;font-size:32px;font-weight:700;color:#111;letter-spacing:-0.5px;line-height:1;text-decoration:none;flex-shrink:0;}
+.site-logo span{color:var(--red);font-size:11px;display:block;font-family:'Noto Sans JP',sans-serif;font-weight:400;letter-spacing:1px;margin-top:2px;}
+.gnav{background:#111;border-bottom:2px solid var(--red);}
+.gnav-inner{max-width:1100px;margin:0 auto;display:flex;}
+.gnav a{color:#ddd;font-size:13px;padding:9px 14px;display:block;border-right:1px solid #333;white-space:nowrap;transition:background 0.1s,color 0.1s;}
+.gnav a:hover,.gnav a.active{background:var(--red);color:#fff;text-decoration:none;}
+.container{max-width:1100px;margin:0 auto;padding:20px 16px;}
+.main-grid{display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start;}
+@media(max-width:768px){.main-grid{grid-template-columns:1fr;}.ad-hw{display:none;}}
+.section-head{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;border-left:4px solid var(--red);border-bottom:1px solid var(--border);padding:4px 0 8px 10px;margin-bottom:16px;color:#111;}
+/* 検索 */
+.search-bar{display:flex;gap:8px;margin-bottom:20px;}
+.search-bar input{flex:1;padding:9px 14px;border:1px solid var(--border);border-radius:3px;font-size:14px;font-family:'Noto Sans JP',sans-serif;outline:none;transition:border-color 0.15s;}
+.search-bar input:focus{border-color:#0a4fa8;}
+.search-bar button{padding:9px 18px;background:var(--red);color:#fff;border:none;border-radius:3px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Noto Sans JP',sans-serif;white-space:nowrap;}
+.search-bar button:hover{background:#a00000;}
+.search-result-label{font-size:13px;color:var(--ink3);margin-bottom:12px;}
+.search-result-label strong{color:var(--ink);font-weight:700;}
+/* 記事リスト */
+.article-item{background:#fff;border:1px solid var(--border);border-top:3px solid #333;padding:16px;margin-bottom:12px;cursor:pointer;transition:box-shadow 0.15s;}
+.article-item:hover{box-shadow:0 2px 10px rgba(0,0,0,0.09);}
+.article-item.highlight{border-top-color:var(--red);}
+.article-item.hidden{display:none;}
+.ai-tags{display:flex;gap:6px;margin-bottom:7px;flex-wrap:wrap;}
+.htag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;letter-spacing:0.5px;}
+.htag-red{background:var(--red);color:#fff;}
+.htag-solved{background:#d4edda;color:#155724;border:1px solid #c3e6cb;}
+.htag-gray{background:#e9ecef;color:#495057;border:1px solid #ccc;}
+.htag-blue{background:#e8f0fb;color:#0a4fa8;border:1px solid #c5d8ee;}
+.ai-title{font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;line-height:1.45;color:#111;margin-bottom:6px;}
+.ai-summary{font-size:13px;color:var(--ink3);line-height:1.7;margin-bottom:6px;}
+.ai-meta{font-size:11px;color:var(--ink4);display:flex;gap:12px;flex-wrap:wrap;}
+.no-result{text-align:center;padding:40px 0;color:var(--ink3);font-size:14px;}
+/* サイドバー */
+.side-block{background:#fff;border:1px solid var(--border);margin-bottom:16px;}
+.side-head{background:#111;color:#fff;font-size:13px;font-weight:700;padding:8px 12px;letter-spacing:0.5px;}
+.side-head.red{background:var(--red);}
+.side-body{padding:10px 12px;}
+.ranking-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--border2);cursor:pointer;}
+.ranking-item:last-child{border-bottom:none;}
+.rnum{font-size:20px;font-weight:700;color:var(--red);min-width:22px;font-family:'Noto Serif JP',serif;line-height:1;}
+.rnum.n2{color:#888;}.rnum.n3{color:#c97c2e;}
+.ritem-title{font-size:13px;line-height:1.5;color:#111;}
+.side-tag-cloud{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;}
+.stag{font-size:12px;padding:3px 10px;border:1px solid var(--border);color:var(--ink2);cursor:pointer;}
+.stag:hover{background:#111;color:#fff;border-color:#111;}
+/* 広告 */
+.ad-label{font-size:10px;color:#bbb;text-align:center;margin-bottom:3px;letter-spacing:1px;}
+.ad-slot{margin-bottom:16px;text-align:center;}
+.ad-hw{text-align:center;}
+.ad-header{width:468px;height:60px;background:linear-gradient(135deg,#0057b8,#003d82);display:flex;align-items:center;justify-content:space-between;padding:0 20px;box-sizing:border-box;border:1px solid #004aaa;}
+.ad-header-left{display:flex;align-items:center;gap:10px;}
+.ad-header-icon{font-size:24px;}
+.ad-header-name{color:#fff;font-size:15px;font-weight:700;letter-spacing:1px;}
+.ad-header-tagline{color:#90c8ff;font-size:10px;display:block;margin-top:1px;}
+.ad-header-body{color:#fff;font-size:12px;text-align:center;line-height:1.4;}
+.ad-header-body strong{font-size:14px;color:#ffe066;display:block;}
+.ad-header-btn{background:#ffe066;color:#003d82;font-size:11px;font-weight:700;padding:6px 14px;border-radius:3px;white-space:nowrap;}
+.ad-side1{background:linear-gradient(160deg,#1a1a2e,#16213e);padding:18px 16px;box-sizing:border-box;border:1px solid #2a2a4e;text-align:center;}
+.ad-side1-brand{font-size:13px;font-weight:700;color:#b0b8cc;letter-spacing:2px;margin-bottom:4px;}
+.ad-side1-icon{font-size:48px;margin:8px 0;}
+.ad-side1-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;}
+.ad-side1-sub{font-size:11px;color:#90a0b8;margin-bottom:4px;}
+.ad-side1-spec{font-size:11px;color:#a0c4ff;margin-bottom:14px;}
+.ad-side1-btn{display:inline-block;background:#e8001c;color:#fff;font-size:12px;font-weight:700;padding:8px 24px;border-radius:2px;}
+footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
+.footer-inner{max-width:1100px;margin:0 auto;padding:0 16px;}
+.footer-logo{font-family:'Noto Serif JP',serif;font-size:18px;color:#fff;margin-bottom:8px;}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;}
+.footer-links a{font-size:12px;color:#888;}
+.footer-links a:hover{color:#fff;}
+.footer-copy{font-size:11px;color:#555;border-top:1px solid #333;padding-top:12px;margin-top:12px;}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-top">
+      <a href="index.html" class="site-logo">SNR界隈ニュース<span>SNR KAIWA NEWS — 界隈の今をいち早く</span></a>
+      <div class="ad-hw">
+        <div class="ad-label">広告</div>
+        <div class="ad-header">
+          <div class="ad-header-left">
+            <div class="ad-header-icon">📶</div>
+            <div><div class="ad-header-name">SoftBank</div><span class="ad-header-tagline">5G対応</span></div>
+          </div>
+          <div class="ad-header-body"><strong>月額 2,970円〜</strong>乗り換えで最大 30,000円 還元</div>
+          <div class="ad-header-btn">詳細はこちら</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="gnav">
+    <div class="gnav-inner">
+      <a href="index.html">トップ</a>
+      <a href="news.html" class="active">事件・速報</a>
+      <a href="search.html">記事検索</a>
+      <a href="about.html">運営情報</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="main-grid">
+    <main>
+      <div class="section-head">📋 事件・速報 — 記事一覧</div>
+
+      <!-- 検索バー -->
+      <div class="search-bar">
+        <input type="text" id="listSearch" placeholder="記事を絞り込む（例：ブロック、masu、AZUKI）" oninput="filterList()">
+        <button onclick="filterList()">🔍 絞込み</button>
+      </div>
+      <div class="search-result-label" id="listLabel">全 <strong>2</strong> 件の記事</div>
+
+      <div id="articleList">
+
+        <div class="article-item highlight" data-keywords="しゃけ あずき ブロック discord make it a quote 悲報 共通フレ 白夜紅葉" onclick="location.href='article2.html'">
+          <div class="ai-tags">
+            <span class="htag htag-red">悲報</span>
+            <span class="htag htag-blue">Discord</span>
+          </div>
+          <div class="ai-title">【悲報】しゃけ、あずきにブロックされる ― 「単純に死んでもらえる？」発言が引き金か、共通フレも消滅</div>
+          <div class="ai-summary">しゃけごはん。氏がMake it a Quoteであずき氏の発言を引用画像化したところ、即座に「ブロックしました」と返答。共通フレンドも消え「終わった…」と絶望。白夜紅葉（MM）氏が仲裁に入るも状況変わらず。</div>
+          <div class="ai-meta">
+            <span>📅 2026年6月6日（土）13:08</span>
+            <span>SNR界隈ニュース編集部</span>
+          </div>
+        </div>
+
+        <div class="article-item" data-keywords="masu 黒猫シア azuki ストーカー リアルエンカ 新幹線 解決済 悲報 ネッ友" onclick="location.href='article1.html'">
+          <div class="ai-tags">
+            <span class="htag htag-red">悲報</span>
+            <span class="htag htag-solved">✅ 解決済</span>
+          </div>
+          <div class="ai-title">【解決済】masu氏、ネッ友である黒猫シア をリアルでストーカーしてしまう ― AZUKI氏は向かっていないことが判明</div>
+          <div class="ai-summary">masu氏が黒猫シア氏をリアルでエンカしようとしているとの情報が浮上。当初AZUKI氏が新幹線で移動中との続報もあったが、後にAZUKI氏は向かっていないことが判明し解決済みとなった。</div>
+          <div class="ai-meta">
+            <span>📅 2026年6月6日（土）掲載</span>
+            <span>SNR界隈ニュース編集部</span>
+            <span style="background:#d4edda;color:#155724;border:1px solid #c3e6cb;font-size:10px;font-weight:700;padding:1px 6px;border-radius:2px;">解決済</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="no-result" id="noResult" style="display:none;">🔍 該当する記事が見つかりませんでした。</div>
+    </main>
+
+    <aside>
+      <div class="ad-slot">
+        <div class="ad-label">PR</div>
+        <div class="ad-side1">
+          <div class="ad-side1-brand">🚗 TOYOTA</div>
+          <div class="ad-side1-icon">🚗</div>
+          <div class="ad-side1-title">新型クラウン</div>
+          <div class="ad-side1-sub">試乗申込受付中</div>
+          <div class="ad-side1-spec">燃費 28.4km/L ｜ 全国販売店にて</div>
+          <div class="ad-side1-btn">試乗を予約する</div>
+        </div>
+      </div>
+
+      <div class="side-block">
+        <div class="side-head red">🔥 アクセスランキング</div>
+        <div class="side-body">
+          <div class="ranking-item" onclick="location.href='article2.html'">
+            <span class="rnum">1</span><span class="ritem-title">【悲報】しゃけ、あずきにブロックされる</span>
+          </div>
+          <div class="ranking-item" onclick="location.href='article1.html'">
+            <span class="rnum n2">2</span><span class="ritem-title">【解決済】masu氏ストーカー疑惑</span>
+          </div>
+          <div class="ranking-item">
+            <span class="rnum n3">3</span><span class="ritem-title">SNR界隈ニュース創刊</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-block">
+        <div class="side-head">🏷 タグで絞り込む</div>
+        <div class="side-tag-cloud">
+          <span class="stag" onclick="setSearch('しゃけ')">しゃけ</span>
+          <span class="stag" onclick="setSearch('あずき')">あずき</span>
+          <span class="stag" onclick="setSearch('masu')">masu</span>
+          <span class="stag" onclick="setSearch('黒猫シア')">黒猫シア</span>
+          <span class="stag" onclick="setSearch('AZUKI')">AZUKI</span>
+          <span class="stag" onclick="setSearch('ブロック')">ブロック</span>
+          <span class="stag" onclick="setSearch('解決済')">解決済</span>
+          <span class="stag" onclick="setSearch('Discord')">Discord</span>
+          <span class="stag" onclick="setSearch('悲報')">悲報</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">SNR界隈ニュース</div>
+    <div class="footer-links">
+      <a href="index.html">トップ</a>
+      <a href="news.html">事件・速報</a>
+      <a href="search.html">記事検索</a>
+      <a href="about.html">運営情報</a>
+    </div>
+    <div class="footer-copy">© 2026 SNR界隈ニュース — 非公式ファンメディア。掲載情報は報告時点のものです。</div>
+  </div>
+</footer>
+
+<script>
+const articles = document.querySelectorAll('#articleList .article-item');
+const label = document.getElementById('listLabel');
+const noResult = document.getElementById('noResult');
+
+function filterList() {
+  const q = document.getElementById('listSearch').value.trim().toLowerCase();
+  let count = 0;
+  articles.forEach(el => {
+    const kw = el.dataset.keywords || '';
+    const title = el.querySelector('.ai-title').textContent;
+    const summary = el.querySelector('.ai-summary').textContent;
+    const match = !q || kw.includes(q) || title.toLowerCase().includes(q) || summary.toLowerCase().includes(q);
+    el.classList.toggle('hidden', !match);
+    if (match) count++;
+  });
+  if (q) {
+    label.innerHTML = `「<strong>${q}</strong>」の検索結果：<strong>${count}</strong> 件`;
+  } else {
+    label.innerHTML = `全 <strong>${count}</strong> 件の記事`;
+  }
+  noResult.style.display = count === 0 ? 'block' : 'none';
+}
+
+function setSearch(kw) {
+  document.getElementById('listSearch').value = kw;
+  filterList();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+</script>
+</body>
+</html>
