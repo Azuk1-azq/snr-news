@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-
-  <!-- 必須設定 -->
+  
+    <!-- 必須設定 -->
   <meta property="og:title" content="SNR界隈ニュース|界隈の今をいち早く" />
   <meta property="og:description" content="SNR界隈ニュースでは様々なSNR界隈でのニュースをいち早くお届けします。サイト作成:あずき" />
   <meta property="og:url" content="https://snr-news.f5.si/" />
@@ -10,7 +10,7 @@
   <meta property="og:type" content="website" />
   <!-- Discord / X (旧Twitter) 用の追加設定（画像を大きく綺麗に見せる） -->
   <meta name="twitter:card" content="summary_large_image" />
-
+  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SNR界隈ニュース — 界隈の今をいち早く</title>
@@ -23,8 +23,6 @@ html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',sans-serif;font-size:14px;line-height:1.7;}
 a{color:var(--link);text-decoration:none;}
 a:hover{text-decoration:underline;}
-.topbar{background:#111;color:#ccc;font-size:11px;padding:4px 0;}
-.topbar-inner{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;}
 .masthead{background:#fff;border-bottom:3px solid #111;padding:10px 0 0;}
 .masthead-inner{max-width:1100px;margin:0 auto;padding:0 16px;}
 .masthead-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:8px;gap:16px;}
@@ -42,21 +40,18 @@ a:hover{text-decoration:underline;}
 .main-grid{display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start;}
 @media(max-width:768px){.main-grid{grid-template-columns:1fr;}.ad-header-wrap{display:none;}}
 .section-head{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;border-left:4px solid var(--red);border-bottom:1px solid var(--border);padding:4px 0 8px 10px;margin-bottom:14px;color:#111;}
-.hero-card{background:#fff;border:1px solid var(--border);border-top:4px solid #388e3c;margin-bottom:16px;cursor:pointer;transition:box-shadow 0.15s;}
+.hero-card{background:#fff;border:1px solid var(--border);border-top:4px solid var(--red);margin-bottom:16px;cursor:pointer;transition:box-shadow 0.15s;}
 .hero-card:hover{box-shadow:0 4px 16px rgba(0,0,0,0.1);}
 .hero-card-body{padding:16px;}
 .hero-tags{display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap;}
 .htag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;letter-spacing:0.5px;}
 .htag-red{background:var(--red);color:#fff;}
 .htag-solved{background:#d4edda;color:#155724;border:1px solid #c3e6cb;}
-.htag-new{background:var(--red);color:#fff;}
 .htag-gray{background:#e9ecef;color:#495057;border:1px solid #ccc;}
 .htag-blue{background:#e8f0fb;color:#0a4fa8;border:1px solid #c5d8ee;}
 .hero-title{font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;line-height:1.45;color:#111;margin-bottom:8px;}
 .hero-summary{font-size:13px;color:var(--ink3);line-height:1.7;margin-bottom:10px;}
 .hero-meta{font-size:11px;color:var(--ink4);display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
-.update-badge-solved{background:#d4edda;border:1px solid #c3e6cb;color:#155724;font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;}
-.update-badge{background:#fff3cd;border:1px solid #ffc107;color:#856404;font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;}
 .hero-read{font-size:12px;color:var(--red);font-weight:700;margin-top:10px;}
 .article-item{background:#fff;border:1px solid var(--border);border-top:3px solid #333;padding:14px;margin-bottom:12px;cursor:pointer;transition:box-shadow 0.15s;}
 .article-item:hover{box-shadow:0 2px 10px rgba(0,0,0,0.08);}
@@ -78,8 +73,34 @@ a:hover{text-decoration:underline;}
 .latest-item:last-child{border-bottom:none;}
 .latest-time{font-size:11px;color:var(--red);font-weight:700;white-space:nowrap;min-width:38px;}
 .latest-title{font-size:13px;color:#111;line-height:1.5;}
+/* 広告 */
 .ad-label{font-size:10px;color:#bbb;text-align:center;margin-bottom:3px;letter-spacing:1px;}
 .ad-slot{margin-bottom:16px;text-align:center;}
+.ad-banner{display:block;width:100%;cursor:pointer;border:1px solid #e0e0e0;}
+/* ヘッダー広告（ソフトバンク風） */
+.ad-header{width:468px;height:60px;background:linear-gradient(135deg,#0057b8,#003d82);display:flex;align-items:center;justify-content:space-between;padding:0 20px;box-sizing:border-box;border:1px solid #004aaa;flex-shrink:0;}
+.ad-header-left{display:flex;align-items:center;gap:10px;}
+.ad-header-icon{font-size:24px;}
+.ad-header-name{color:#fff;font-size:15px;font-weight:700;font-family:'Noto Sans JP',sans-serif;letter-spacing:1px;}
+.ad-header-tagline{color:#90c8ff;font-size:10px;display:block;margin-top:1px;}
+.ad-header-body{color:#fff;font-size:12px;text-align:center;line-height:1.4;}
+.ad-header-body strong{font-size:14px;color:#ffe066;display:block;}
+.ad-header-btn{background:#ffe066;color:#003d82;font-size:11px;font-weight:700;padding:6px 14px;border-radius:3px;white-space:nowrap;}
+/* サイド広告1（トヨタ風） */
+.ad-side1{width:300px;background:linear-gradient(160deg,#1a1a2e,#16213e);padding:18px 16px;box-sizing:border-box;border:1px solid #2a2a4e;text-align:center;}
+.ad-side1-brand{font-size:13px;font-weight:700;color:#b0b8cc;letter-spacing:2px;margin-bottom:4px;}
+.ad-side1-icon{font-size:52px;margin:8px 0;}
+.ad-side1-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;}
+.ad-side1-sub{font-size:11px;color:#90a0b8;margin-bottom:4px;}
+.ad-side1-spec{font-size:11px;color:#a0c4ff;margin-bottom:14px;}
+.ad-side1-btn{display:inline-block;background:#e8001c;color:#fff;font-size:12px;font-weight:700;padding:8px 24px;border-radius:2px;letter-spacing:0.5px;}
+/* サイド広告2（楽天風） */
+.ad-side2{width:300px;background:linear-gradient(135deg,#bf0000,#8b0000);padding:14px 16px;box-sizing:border-box;border:1px solid #9e0000;text-align:center;}
+.ad-side2-brand{font-size:13px;font-weight:700;color:#ffcdd2;letter-spacing:1px;margin-bottom:6px;}
+.ad-side2-title{font-size:17px;font-weight:700;color:#fff;margin-bottom:4px;}
+.ad-side2-badge{display:inline-block;background:#ffe066;color:#8b0000;font-size:12px;font-weight:700;padding:3px 12px;border-radius:2px;margin-bottom:8px;}
+.ad-side2-sub{font-size:11px;color:#ffcdd2;margin-bottom:12px;line-height:1.5;}
+.ad-side2-btn{display:inline-block;background:#fff;color:#bf0000;font-size:12px;font-weight:700;padding:7px 22px;border-radius:2px;}
 footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
 .footer-inner{max-width:1100px;margin:0 auto;padding:0 16px;}
 .footer-logo{font-family:'Noto Serif JP',serif;font-size:18px;color:#fff;margin-bottom:8px;}
@@ -91,47 +112,48 @@ footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
 </head>
 <body>
 
-<div class="topbar">
-  <div class="topbar-inner">
-    <span style="color:#555;">非公式ファンメディア</span>
-  </div>
-</div>
 <div class="masthead">
   <div class="masthead-inner">
     <div class="masthead-top">
       <a href="index.html" class="site-logo">SNR界隈ニュース<span>SNR KAIWA NEWS — 界隈の今をいち早く</span></a>
-      <!-- 偽広告バナー（ヘッダー） -->
       <div class="ad-header-wrap" style="text-align:center;">
         <div class="ad-label">広告</div>
-        <svg width="468" height="60" xmlns="http://www.w3.org/2000/svg" style="display:block;border:1px solid #e0e0e0;">
-          <defs><linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#FF6B00"/><stop offset="100%" style="stop-color:#FF3D00"/></linearGradient></defs>
-          <rect width="468" height="60" fill="url(#hg)"/>
-          <text x="20" y="22" font-family="sans-serif" font-size="11" fill="#fff" opacity="0.7">PR</text>
-          <text x="234" y="28" font-family="sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">🍔 マクドナルド公式アプリ</text>
-          <text x="234" y="48" font-family="sans-serif" font-size="12" fill="#ffe" text-anchor="middle">クーポン毎日更新中！ 今すぐダウンロード →</text>
-        </svg>
+        <div class="ad-header">
+          <div class="ad-header-left">
+            <div class="ad-header-icon">📶</div>
+            <div>
+              <div class="ad-header-name">SoftBank</div>
+              <span class="ad-header-tagline">5G対応</span>
+            </div>
+          </div>
+          <div class="ad-header-body">
+            <strong>月額 2,970円〜</strong>
+            乗り換えで最大 30,000円 還元
+          </div>
+          <div class="ad-header-btn">詳細はこちら</div>
+        </div>
       </div>
     </div>
   </div>
   <div class="gnav">
     <div class="gnav-inner">
       <a href="index.html" class="active">トップ</a>
-      <a href="article1.html">事件・速報</a>
+      <a href="news.html">事件・速報</a>
+      <a href="search.html">記事検索</a>
+      <a href="about.html">運営情報</a>
     </div>
   </div>
 </div>
-
 
 <div class="container">
   <div class="main-grid">
     <main>
       <div class="section-head">🔴 最新ニュース・速報</div>
 
-      <!-- 最新記事ヒーロー -->
-      <div class="hero-card" style="border-top-color:var(--red);" onclick="location.href='article2.html'">
+      <div class="hero-card" onclick="location.href='article2.html'">
         <div class="hero-card-body">
           <div class="hero-tags">
-            <span class="htag htag-new">🆕 新着</span>
+            <span class="htag htag-red">🆕 新着</span>
             <span class="htag htag-blue">Discord</span>
           </div>
           <div class="hero-title">【悲報】しゃけ、あずきにブロックされる ― 「単純に死んでもらえる？」発言が引き金か、共通フレも消滅</div>
@@ -146,7 +168,6 @@ footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
 
       <div class="section-head" style="margin-top:24px;">📰 その他の記事</div>
 
-      <!-- 解決済み記事 -->
       <div class="article-item" onclick="location.href='article1.html'">
         <div class="hero-tags">
           <span class="htag htag-red">悲報</span>
@@ -166,22 +187,17 @@ footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
     </main>
 
     <aside>
-      <!-- 偽広告1（サイドバー縦） -->
+      <!-- トヨタ風広告 -->
       <div class="ad-slot">
         <div class="ad-label">PR</div>
-        <svg width="300" height="250" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto;border:1px solid #e0e0e0;">
-          <rect width="300" height="250" fill="#f8f9fa"/>
-          <rect width="300" height="56" fill="#e53935"/>
-          <text x="150" y="24" font-family="sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">🎮 ゲーミングPC特集</text>
-          <text x="150" y="44" font-family="sans-serif" font-size="11" fill="#ffcdd2" text-anchor="middle">今だけ最大40%OFF</text>
-          <rect x="30" y="68" width="240" height="104" rx="8" fill="#fff" stroke="#e0e0e0"/>
-          <text x="150" y="112" font-family="sans-serif" font-size="40" text-anchor="middle">🖥️</text>
-          <text x="150" y="148" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">RTX 5090 搭載モデル</text>
-          <text x="150" y="163" font-family="sans-serif" font-size="11" fill="#e53935" text-anchor="middle" font-weight="bold">¥198,000 → ¥118,800</text>
-          <rect x="50" y="186" width="200" height="36" rx="18" fill="#e53935"/>
-          <text x="150" y="209" font-family="sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">Googleで検索しよう</text>
-          <text x="150" y="238" font-family="sans-serif" font-size="10" fill="#aaa" text-anchor="middle">※在庫限り。価格は変動する場合があります</text>
-        </svg>
+        <div class="ad-side1">
+          <div class="ad-side1-brand">🚗 TOYOTA</div>
+          <div class="ad-side1-icon">🚗</div>
+          <div class="ad-side1-title">新型クラウン</div>
+          <div class="ad-side1-sub">試乗申込受付中</div>
+          <div class="ad-side1-spec">燃費 28.4km/L ｜ 全国販売店にて</div>
+          <div class="ad-side1-btn">試乗を予約する</div>
+        </div>
       </div>
 
       <div class="side-block">
@@ -229,20 +245,16 @@ footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
         </div>
       </div>
 
-      <!-- 偽広告2 -->
+      <!-- 楽天風広告 -->
       <div class="ad-slot">
         <div class="ad-label">PR</div>
-        <svg width="300" height="160" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto;border:1px solid #e0e0e0;">
-          <defs><linearGradient id="ag2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1b1b2f"/><stop offset="100%" style="stop-color:#16213e"/></linearGradient></defs>
-          <rect width="300" height="160" fill="url(#ag2)"/>
-          <circle cx="260" cy="25" r="50" fill="#0f3460" opacity="0.5"/>
-          <text x="150" y="44" font-family="sans-serif" font-size="15" font-weight="bold" fill="#e94560" text-anchor="middle">📱 wakooチャットアプリ</text>
-          <text x="150" y="66" font-family="sans-serif" font-size="12" fill="#a8dadc" text-anchor="middle">界隈の仲間とつながろう</text>
-          <text x="150" y="88" font-family="sans-serif" font-size="11" fill="#ccc" text-anchor="middle">✓ 匿名OK  ✓ 既読スルー通知なし</text>
-          <text x="150" y="106" font-family="sans-serif" font-size="11" fill="#ccc" text-anchor="middle">✓ ネッ友探しに特化</text>
-          <rect x="75" y="120" width="150" height="28" rx="14" fill="#e94560"/>
-          <text x="150" y="139" font-family="sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">無料でダウンロード</text>
-        </svg>
+        <div class="ad-side2">
+          <div class="ad-side2-brand">🛒 Rakuten 楽天市場</div>
+          <div class="ad-side2-title">楽天スーパーSALE</div>
+          <div class="ad-side2-badge">ポイント最大 44倍！</div>
+          <div class="ad-side2-sub">期間限定開催中<br>対象商品を今すぐチェック</div>
+          <div class="ad-side2-btn">エントリーはこちら</div>
+        </div>
       </div>
     </aside>
   </div>
@@ -251,9 +263,11 @@ footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">SNR界隈ニュース</div>
-    <div class="footer-links">
+        <div class="footer-links">
       <a href="index.html">トップ</a>
-      <a href="article1.html">事件・速報</a>
+      <a href="news.html">事件・速報</a>
+      <a href="search.html">記事検索</a>
+      <a href="about.html">運営情報</a>
     </div>
     <div class="footer-copy">© 2026 SNR界隈ニュース — 非公式ファンメディア。掲載情報は報告時点のものです。</div>
   </div>
