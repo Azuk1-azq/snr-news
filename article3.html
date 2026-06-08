@@ -2,18 +2,18 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta property="og:title" content="SNR界隈ニュース — 界隈の今をいち早く">
-<meta property="og:description" content="SNR界隈で起きた出来事・速報・事件をいち早くお届けする非公式ファンメディア。">
-<meta property="og:url" content="https://snr-news.f5.si/index.html">
+<meta property="og:title" content="猿の森サーバーで外部スタンプが使用不可に — その後修正を確認 | SNR界隈ニュース">
+<meta property="og:description" content="猿の森Discordサーバーにおいて外部スタンプが使用できない状態が発生。その後修正が確認され、現在は正常に使用可能。">
+<meta property="og:url" content="https://snr-news.f5.si/article3.html">
 <meta property="og:image" content="https://snr-news.f5.si/logo.png">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="SNR界隈ニュース">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SNR界隈ニュース — 界隈の今をいち早く">
-<meta name="twitter:description" content="SNR界隈で起きた出来事・速報・事件をいち早くお届けする非公式ファンメディア。">
+<meta name="twitter:title" content="猿の森サーバーで外部スタンプが使用不可に — その後修正を確認 | SNR界隈ニュース">
+<meta name="twitter:description" content="猿の森Discordサーバーにおいて外部スタンプが使用できない状態が発生。その後修正が確認され、現在は正常に使用可能。">
 <meta name="twitter:image" content="https://snr-news.f5.si/logo.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SNR界隈ニュース — 界隈の今をいち早く | SNR界隈ニュース</title>
+<title>猿の森サーバーで外部スタンプが使用不可に — その後修正を確認 | SNR界隈ニュース</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -87,25 +87,41 @@ footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
 .footer-copy{font-size:11px;color:#555;border-top:1px solid #333;padding-top:12px;margin-top:12px;}
 @media(max-width:768px){.main-wrap,.main-grid{grid-template-columns:1fr!important;}.ad-hw{display:none;}}
 
-.container{max-width:1100px;margin:0 auto;padding:20px 16px;}
-.main-grid{display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start;}
-.hero-card{background:#fff;border:1px solid var(--border);border-top:3px solid #555;margin-bottom:12px;cursor:pointer;transition:box-shadow 0.15s;}
-.hero-card:hover{box-shadow:0 4px 16px rgba(0,0,0,0.09);}
-.hero-card-body{padding:16px;}
-.hero-tags{display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap;}
-.hero-title{font-family:'Noto Serif JP',serif;font-size:21px;font-weight:700;line-height:1.45;color:#111;margin-bottom:8px;}
-.hero-summary{font-size:13px;color:var(--ink3);line-height:1.7;margin-bottom:10px;}
-.hero-meta{font-size:11px;color:var(--ink4);display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
-.hero-read{font-size:12px;color:var(--link);font-weight:700;margin-top:10px;}
-.article-item{background:#fff;border:1px solid var(--border);border-top:3px solid #ccc;padding:14px;margin-bottom:12px;cursor:pointer;transition:box-shadow 0.15s;}
-.article-item:hover{box-shadow:0 2px 10px rgba(0,0,0,0.08);}
-.article-item-title{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;line-height:1.45;color:#111;margin-bottom:6px;}
-.article-item-summary{font-size:12px;color:var(--ink3);line-height:1.6;}
-.article-item-meta{font-size:11px;color:var(--ink4);margin-top:6px;}
-.latest-item{padding:8px 0;border-bottom:1px solid var(--border2);display:flex;align-items:flex-start;gap:8px;cursor:pointer;}
-.latest-item:last-child{border-bottom:none;}
-.latest-time{font-size:11px;color:var(--ink3);font-weight:700;white-space:nowrap;min-width:38px;}
-.latest-title{font-size:13px;color:#111;line-height:1.5;}
+.main-wrap{max-width:1100px;margin:0 auto;padding:20px 16px;display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start;}
+.article-header{margin-bottom:16px;}
+.article-tags{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;}
+.atag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;letter-spacing:0.5px;}
+.atag-gray{background:#e9ecef;color:#495057;border:1px solid #ccc;}
+.atag-solved{background:#d4edda;color:#155724;border:1px solid #c3e6cb;}
+.atag-orange{background:#fff3e0;color:#e65100;border:1px solid #ffcc80;}
+.article-title{font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;line-height:1.45;color:#111;margin-bottom:10px;}
+.article-meta{display:flex;align-items:center;gap:16px;font-size:12px;color:var(--ink3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:7px 0;margin-bottom:14px;flex-wrap:wrap;}
+.update-badge{background:#d4edda;border:1px solid #c3e6cb;color:#155724;font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;}
+.article-body{font-size:15px;line-height:1.9;color:#222;}
+.article-body p{margin-bottom:1.1rem;}
+.article-lead{font-family:'Noto Serif JP',serif;font-size:16px;line-height:1.8;border-left:4px solid var(--border);padding:10px 14px;margin-bottom:1.25rem;background:#f8f8f8;color:#333;}
+.article-body h2{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;border-left:4px solid #555;padding:4px 0 4px 12px;margin:1.5rem 0 0.75rem;color:#111;}
+.fact-box{background:#f0f4f8;border-left:4px solid #aab8c8;padding:12px 16px;margin:1.25rem 0;font-size:14px;color:#334;line-height:1.8;}
+.fact-box strong{color:#334;font-weight:700;display:block;margin-bottom:4px;}
+.solved-box{background:#e8f5e9;border:1px solid #c3e6cb;border-left:4px solid #388e3c;padding:12px 16px;margin:1.25rem 0;font-size:14px;color:#1b5e20;line-height:1.8;}
+.solved-box strong{color:#2e7d32;font-weight:700;display:block;margin-bottom:4px;}
+.note-box{background:#fafafa;border:1px solid var(--border);border-left:4px solid #aaa;padding:12px 16px;margin:1.25rem 0;font-size:13px;color:var(--ink3);line-height:1.8;}
+.note-box strong{color:var(--ink2);font-weight:700;display:block;margin-bottom:4px;}
+.update-box{background:#f5f5f5;border:1px solid var(--border);padding:12px 16px;font-size:13px;color:var(--ink3);line-height:1.8;margin-top:1.5rem;}
+.update-box strong{color:var(--ink2);font-weight:700;}
+.share-area{display:flex;align-items:center;gap:8px;padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:1.5rem 0;flex-wrap:wrap;}
+.share-label{font-size:12px;color:var(--ink3);font-weight:500;}
+.share-btn{font-size:12px;font-weight:700;padding:5px 14px;border-radius:3px;cursor:pointer;border:none;}
+.share-x{background:#000;color:#fff;}
+.share-line{background:#06c755;color:#fff;}
+.share-copy{background:#e9ecef;color:#333;border:1px solid #ccc;}
+.related-articles{margin-top:1.5rem;}
+.related-title{font-size:14px;font-weight:700;border-bottom:2px solid #111;padding-bottom:6px;margin-bottom:12px;}
+.related-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--border2);cursor:pointer;}
+.related-item:last-child{border-bottom:none;}
+.related-thumb{width:80px;height:54px;background:#e9ecef;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:#999;font-family:'Noto Serif JP',serif;font-weight:700;text-align:center;line-height:1.4;}
+.related-item-title{font-size:13px;font-weight:500;line-height:1.5;color:#111;}
+.related-item-date{font-size:11px;color:var(--ink4);margin-top:4px;}
 </style>
 </head>
 <body>
@@ -127,64 +143,91 @@ footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
     </div>
   </div>
   <div class="gnav"><div class="gnav-inner">
-      <a href="index.html"class="active">トップ</a>
-      <a href="news.html">事件・速報</a>
+      <a href="index.html">トップ</a>
+      <a href="news.html"class="active">事件・速報</a>
       <a href="search.html">記事検索</a>
       <a href="about.html">運営情報</a>
     </div></div>
 </div>
-<div class="container">
-  <div class="main-grid">
-    <main>
-      <div class="section-head">📰 最新記事</div>
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">トップ</a><span>›</span>
+    <a href="news.html">事件・速報</a><span>›</span>
+    <span>猿の森スタンプ不具合</span>
+  </div>
+</div>
+<div class="main-wrap">
+  <main>
+    <div class="article-header">
+      <div class="article-tags">
+        <span class="atag atag-orange">不具合</span>
+        <span class="atag atag-gray">Discord</span>
+        <span class="atag atag-solved">✅ 修正済</span>
+      </div>
+      <h1 class="article-title">猿の森サーバーで外部スタンプが使用不可に — その後、修正を確認</h1>
+      <div class="article-meta">
+        <span>📅 2026年6月8日（月）17:27</span>
+        <span>✏️ SNR界隈ニュース編集部</span>
+        <span class="update-badge">✅ 修正済み</span>
+      </div>
+    </div>
+    <div class="article-body">
+      <p class="article-lead">SNR界隈が拠点とするDiscordサーバー「猿の森」において、外部スタンプが使用できない状態が発生した。その後、問題は修正され、現在は正常に使用できることが確認されている。</p>
 
-      <div class="hero-card" onclick="location.href='article3.html'">
-        <div class="hero-card-body">
-          <div class="hero-tags">
-            <span class="htag htag-gray">Discord</span>
-            <span class="htag" style="background:#fff3e0;color:#e65100;border:1px solid #ffcc80;font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;letter-spacing:0.5px;">不具合</span>
-            <span class="htag htag-solved">✅ 修正済</span>
-          </div>
-          <div class="hero-title">猿の森サーバーで外部スタンプが使用不可に — その後、修正を確認</div>
-          <div class="hero-summary">猿の森Discordサーバーにおいて外部スタンプが使用できない状態が発生した。その後問題は解消され、現在は正常に使用可能であることが確認されている。</div>
-          <div class="hero-meta">
-            <span>📅 2026年6月8日（月）17:27</span>
-            <span>SNR界隈ニュース編集部</span>
-          </div>
-          <div class="hero-read">▶ 続きを読む</div>
+      <h2>不具合の概要</h2>
+      <p>猿の森サーバー内において、外部サーバーのスタンプ（外部絵文字）が使用できない状態が一時的に発生した。通常であれば利用可能な外部スタンプが反応しない、または表示されないといった症状が確認されていた。</p>
+
+      <div class="fact-box">
+        <strong>【確認された事象】</strong>
+        対象：猿の森Discordサーバー内での外部スタンプ使用<br>
+        症状：外部スタンプが使用不可の状態<br>
+        状態：その後修正を確認、現在は正常動作
+      </div>
+
+      <h2>修正について</h2>
+      <p>不具合発生後、問題は解消され、外部スタンプが再び使用可能な状態に戻ったことが確認された。原因の詳細については現時点で情報が得られておらず、サーバー設定の変更によるものか、Discord側の一時的な問題であったかは不明である。</p>
+
+      <div class="solved-box">
+        <strong>【✅ 修正確認】</strong>
+        猿の森サーバーにおける外部スタンプの使用不可状態は解消された。現在は正常に使用可能であることが確認されている。
+      </div>
+
+      <div class="note-box">
+        <strong>📝 編集部注</strong>
+        不具合の発生時刻・原因・修正の経緯についての詳細情報は現在取材中です。続報が入り次第更新します。情報提供はAZUKI氏のDMまでお願いします。
+      </div>
+
+      <div class="update-box">
+        <strong>【更新履歴】</strong><br>
+        2026/06/08 17:27 ― 不具合発生および修正確認を報告。
+      </div>
+    </div>
+
+    <div class="share-area">
+      <span class="share-label">この記事をシェア：</span>
+      <button class="share-btn share-x" onclick="window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(document.title),'_blank')">𝕏 ポスト</button>
+      <button class="share-btn share-line" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(document.title+'\n'+location.href),'_blank')">LINE</button>
+      <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(location.href);this.textContent='コピー完了！';setTimeout(()=>this.textContent='URLをコピー',2000)">URLをコピー</button>
+    </div>
+
+    <div class="related-articles">
+      <div class="related-title">関連記事</div>
+      <div class="related-item" onclick="location.href='article2.html'">
+        <div class="related-thumb">Discord</div>
+        <div>
+          <div class="related-item-title">しゃけごはん。氏、あずき氏にDiscordでブロックされる</div>
+          <div class="related-item-date">2026年6月6日</div>
         </div>
       </div>
-
-      <div class="section-head" style="margin-top:24px;">📋 その他の記事</div>
-
-      <div class="article-item" onclick="location.href='article2.html'">
-        <div class="hero-tags">
-          <span class="htag htag-blue">Discord</span>
-          <span class="htag htag-gray">事件・速報</span>
+      <div class="related-item" onclick="location.href='article1.html'">
+        <div class="related-thumb">解決済</div>
+        <div>
+          <div class="related-item-title">masu氏とAZUKI氏をめぐるリアルエンカ疑惑（解決済）</div>
+          <div class="related-item-date">2026年6月6日</div>
         </div>
-        <div class="article-item-title">しゃけごはん。氏、あずき氏にDiscordでブロックされる ― 引用投稿が発端、白夜紅葉氏が仲裁</div>
-        <div class="article-item-summary">しゃけごはん。氏がMake it a Quoteを使用してあずき氏の発言を引用画像化したことを契機に、あずき氏がブロックを実施。共通フレンドも消滅し、白夜紅葉（MM）氏が仲裁に入った。</div>
-        <div class="article-item-meta">2026年6月6日（土）13:08 ／ SNR界隈ニュース編集部</div>
       </div>
-
-      <div class="article-item" onclick="location.href='article1.html'">
-        <div class="hero-tags">
-          <span class="htag htag-gray">事件・速報</span>
-          <span class="htag htag-solved">✅ 解決済</span>
-        </div>
-        <div class="article-item-title">masu氏とAZUKI氏をめぐるリアルエンカ疑惑、解決済みと確認 ― AZUKI氏は向かっていなかった</div>
-        <div class="article-item-summary">masu氏が黒猫シア氏のもとへ向かっているとの情報が浮上したが、AZUKI氏は現地へ向かっていなかったことが確認され、本件は解決済みとなった。</div>
-        <div class="article-item-meta">2026年6月6日（土） ／ SNR界隈ニュース編集部</div>
-      </div>
-
-      <div class="article-item">
-        <div class="hero-tags"><span class="htag htag-gray">お知らせ</span></div>
-        <div class="article-item-title">SNR界隈ニュース、本日より創刊</div>
-        <div class="article-item-summary">SNR界隈の動向をリアルタイムでお届けするメディア「SNR界隈ニュース」が本日より運営を開始しました。情報提供・訂正依頼はAZUKI氏のDMまでお願いします。</div>
-        <div class="article-item-meta">2026年6月6日（土） ／ SNR界隈ニュース編集部</div>
-      </div>
-    </main>
-
+    </div>
+  </main>
     <aside>
       <div class="ad-slot">
         <div class="ad-label">PR</div>
@@ -201,25 +244,8 @@ footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
         <div class="side-head red">🔥 アクセスランキング</div>
         <div class="side-body">
           <div class="ranking-item" onclick="location.href='article2.html'"><span class="rnum">1</span><span class="ritem-title">しゃけごはん。氏、あずき氏にDiscordでブロックされる</span></div>
-          <div class="ranking-item" onclick="location.href='article1.html'"><span class="rnum n2">2</span><span class="ritem-title">masu氏リアルエンカ疑惑（解決済）</span></div>
+          <div class="ranking-item" onclick="location.href='article1.html'"><span class="rnum n2">2</span><span class="ritem-title">masu氏とAZUKI氏をめぐるリアルエンカ疑惑（解決済）</span></div>
           <div class="ranking-item"><span class="rnum n3">3</span><span class="ritem-title">SNR界隈ニュース、本日より創刊</span></div>
-        </div>
-      </div>
-      <div class="side-block">
-        <div class="side-head">📌 最新記事</div>
-        <div class="side-body">
-          <div class="latest-item" onclick="location.href='article2.html'">
-            <span class="latest-time">17:27</span>
-            <span class="latest-title">猿の森、外部スタンプ不具合→修正済</span>
-          </div>
-          <div class="latest-item" onclick="location.href='article1.html'">
-            <span class="latest-time">13:08</span>
-            <span class="latest-title">しゃけごはん。氏、あずき氏にブロックされる</span>
-          </div>
-          <div class="latest-item">
-            <span class="latest-time">解決</span>
-            <span class="latest-title">masu氏リアルエンカ疑惑、解決済みに</span>
-          </div>
         </div>
       </div>
       <div class="side-block">
@@ -230,8 +256,9 @@ footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
           <span class="stag" onclick="location.href='search.html?q=masu'">masu</span>
           <span class="stag" onclick="location.href='search.html?q=黒猫シア'">黒猫シア</span>
           <span class="stag" onclick="location.href='search.html?q=AZUKI'">AZUKI</span>
-          <span class="stag" onclick="location.href='search.html?q=Discord'">Discord</span>
+          <span class="stag" onclick="location.href='search.html?q=ブロック'">ブロック</span>
           <span class="stag" onclick="location.href='search.html?q=解決済'">解決済</span>
+          <span class="stag" onclick="location.href='search.html?q=Discord'">Discord</span>
         </div>
       </div>
       <div class="ad-slot">
@@ -245,7 +272,6 @@ footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
         </div>
       </div>
     </aside>
-  </div>
 </div>
 <footer>
   <div class="footer-inner">

@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta property="og:title" content="事件・速報一覧 | SNR界隈ニュース">
-<meta property="og:description" content="記事の一覧情報">
-<meta property="og:url" content="https://snr-news.f5.si/">
-<meta property="og:image" content="https://snr-news.f5.si/logo.png">
-<meta name="twitter:card" content="summary_large_image">
-
 <meta charset="UTF-8">
+<meta property="og:title" content="事件・速報 一覧 | SNR界隈ニュース">
+<meta property="og:description" content="SNR界隈ニュースの事件・速報記事一覧。キーワード絞り込み検索対応。">
+<meta property="og:url" content="https://snr-news.f5.si/news.html">
+<meta property="og:image" content="https://snr-news.f5.si/logo.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SNR界隈ニュース">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="事件・速報 一覧 | SNR界隈ニュース">
+<meta name="twitter:description" content="SNR界隈ニュースの事件・速報記事一覧。キーワード絞り込み検索対応。">
+<meta name="twitter:image" content="https://snr-news.f5.si/logo.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>事件・速報 一覧 | SNR界隈ニュース</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -135,8 +139,18 @@ footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
         <input type="text" id="listSearch" placeholder="記事を絞り込む（例：ブロック、masu、Discord）" oninput="filterList()">
         <button onclick="filterList()">🔍 絞込み</button>
       </div>
-      <div class="result-label" id="listLabel">全 <strong>2</strong> 件の記事</div>
+      <div class="result-label" id="listLabel">全 <strong>3</strong> 件の記事</div>
       <div id="articleList">
+        <div class="article-item" data-keywords="猿の森 外部スタンプ discord 不具合 修正 スタンプ使用不可" onclick="location.href='article3.html'">
+          <div class="ai-tags">
+            <span class="htag htag-gray">Discord</span>
+            <span class="htag" style="background:#fff3e0;color:#e65100;border:1px solid #ffcc80;font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;">不具合</span>
+            <span class="htag htag-solved">✅ 修正済</span>
+          </div>
+          <div class="ai-title">猿の森サーバーで外部スタンプが使用不可に — その後、修正を確認</div>
+          <div class="ai-summary">猿の森Discordサーバーにおいて外部スタンプが使用できない状態が発生した。その後問題は解消され、現在は正常に使用可能であることが確認されている。</div>
+          <div class="ai-meta"><span>📅 2026年6月8日（月）17:27</span><span>SNR界隈ニュース編集部</span><span style="background:#d4edda;color:#155724;border:1px solid #c3e6cb;font-size:10px;font-weight:700;padding:1px 6px;border-radius:2px;">修正済</span></div>
+        </div>
         <div class="article-item" data-keywords="しゃけ あずき ブロック discord make it a quote 共通フレ 白夜紅葉 事件" onclick="location.href='article2.html'">
           <div class="ai-tags">
             <span class="htag htag-blue">Discord</span>
@@ -153,7 +167,7 @@ footer{background:#111;color:#888;padding:24px 0 16px;margin-top:32px;}
           </div>
           <div class="ai-title">masu氏とAZUKI氏をめぐるリアルエンカ疑惑、解決済みと確認 ― AZUKI氏は向かっていなかった</div>
           <div class="ai-summary">masu氏が黒猫シア氏のもとへ向かっているとの情報が浮上。AZUKI氏も関与するとの続報があったが、後に事実でないことが確認され解決済みとなった。</div>
-          <div class="ai-meta"><span>📅 2026年6月6日（土）掲載</span><span>SNR界隈ニュース編集部</span><span style="background:#d4edda;color:#155724;border:1px solid #c3e6cb;font-size:10px;font-weight:700;padding:1px 6px;border-radius:2px;">解決済</span></div>
+          <div class="ai-meta"><span>📅 2026年6月8日（月）17:27</span><span>SNR界隈ニュース編集部</span><span style="background:#d4edda;color:#155724;border:1px solid #c3e6cb;font-size:10px;font-weight:700;padding:1px 6px;border-radius:2px;">解決済</span></div>
         </div>
       </div>
       <div class="no-result" id="noResult" style="display:none;">該当する記事が見つかりませんでした。</div>
